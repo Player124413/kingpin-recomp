@@ -69,6 +69,7 @@ namespace pad
     bool controllerConnected();
     std::chrono::steady_clock::time_point lastUsed(); // last input from a controller
     int keyDest(); // the game's input focus: 0 playing, 1 console, 2 chat, 3 menu
+    bool inShop(); // in a Pawn-O-Matic (driven like a menu)
 }
 
 // On-screen touch controls (runtime/touch_controls.cpp). Positions in window framebuffer pixels,

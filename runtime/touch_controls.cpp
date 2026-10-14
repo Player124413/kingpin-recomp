@@ -53,6 +53,13 @@ namespace
         { "<", 1.8f, 3.0f, 0.75f, 2, kLeft },  { ">", 4.6f, 3.0f, 0.75f, 2, kRight },
         { "OK", 2.2f, 2.2f, 1.0f, 3, kA },     { "BACK", 4.6f, 1.4f, 0.75f, 3, kB },
     };
+    // The Pawn-O-Matic: the menu layout plus the shopkeeper's yes/no.
+    const Button kShopButtons[] = {
+        { "^", 3.2f, 4.4f, 0.75f, 2, kUp },    { "v", 3.2f, 1.6f, 0.75f, 2, kDown },
+        { "<", 1.8f, 3.0f, 0.75f, 2, kLeft },  { ">", 4.6f, 3.0f, 0.75f, 2, kRight },
+        { "OK", 2.2f, 2.2f, 1.0f, 3, kA },     { "BACK", 4.6f, 1.4f, 0.75f, 3, kB },
+        { "YES", 2.0f, 4.6f, 0.7f, 3, kY },    { "NO", 3.8f, 4.0f, 0.65f, 3, kX },
+    };
 
     enum class Role { None, Button, Stick, Look };
     struct Touch
@@ -75,8 +82,11 @@ namespace
     std::chrono::steady_clock::time_point g_lastTouch;
     bool visible() { return touch::enabled() && (!pad::controllerConnected() || g_lastTouch >= pad::lastUsed()); }
 
+    bool g_shopMode = false;
     std::vector<Button> activeButtons()
     {
+        if (g_shopMode)
+            return std::vector<Button>(std::begin(kShopButtons), std::end(kShopButtons));
         return g_menuMode ? std::vector<Button>(std::begin(kMenuButtons), std::end(kMenuButtons))
                           : std::vector<Button>(std::begin(kGameButtons), std::end(kGameButtons));
     }
@@ -91,10 +101,11 @@ namespace
     // Keeps the current mode in step with the game; a mode change drops every touch.
     void syncMode()
     {
-        const bool menu = pad::keyDest() != 0;
-        if (menu != g_menuMode)
+        const bool shop = pad::inShop(), menu = pad::keyDest() != 0 || shop;
+        if (menu != g_menuMode || shop != g_shopMode)
         {
             g_menuMode = menu;
+            g_shopMode = shop;
             g_touches.clear();
         }
     }
@@ -154,7 +165,7 @@ namespace
             { 'O', { 14, 17, 17, 17, 17, 17, 14 } }, { 'P', { 30, 17, 17, 30, 16, 16, 16 } },
             { 'R', { 30, 17, 17, 30, 20, 18, 17 } }, { 'S', { 15, 16, 16, 14, 1, 1, 30 } },
             { 'U', { 17, 17, 17, 17, 17, 17, 14 } }, { 'V', { 17, 17, 17, 17, 17, 10, 4 } },
-            { 'W', { 17, 17, 17, 21, 21, 21, 10 } }, { '+', { 0, 4, 4, 31, 4, 4, 0 } },
+            { 'W', { 17, 17, 17, 21, 21, 21, 10 } }, { 'Y', { 17, 17, 10, 4, 4, 4, 4 } }, { '+', { 0, 4, 4, 31, 4, 4, 0 } },
             { '-', { 0, 0, 0, 31, 0, 0, 0 } },       { '<', { 2, 4, 8, 16, 8, 4, 2 } },
             { '>', { 8, 4, 2, 1, 2, 4, 8 } },        { '^', { 4, 14, 21, 4, 4, 4, 4 } },        { 'v', { 4, 4, 4, 4, 21, 14, 4 } },
         };

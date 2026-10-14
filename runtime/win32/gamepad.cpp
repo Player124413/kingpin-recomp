@@ -18,6 +18,7 @@
 #include <atomic>
 #include <cmath>
 #include <chrono>
+#include <cstring>
 #include <mutex>
 #include <string>
 #include <thread>
@@ -83,6 +84,14 @@ namespace
     // kingpin.exe cl.frame.playerstate.stats[STAT_LAYOUTS]: a note, the notebook or the inventory is
     // shown (Escape then sends "cmd putaway").
     bool layoutShown() { return rd16(0x0133325A) != 0; }
+    // The Pawn-O-Matic shop (maps pawn_*: gamex86.dll level.mapname). Its menu is driven by the
+    // arrow keys (the client sends "cmd uparrow" etc.), Enter (select / exit), Y (yes, buy) and
+    // X (no); the pad maps onto those there.
+    bool inShop()
+    {
+        const char* map = reinterpret_cast<const char*>(g_mem + 0x200F67C8);
+        return keyDest() == 0 && strncmp(map, "pawn_", 5) == 0;
+    }
 
     void key(uint32_t sc, uint32_t vk, bool down)
     {
@@ -104,7 +113,7 @@ namespace
             bool held = false;
             std::chrono::steady_clock::time_point next;
         } dirs[4] = { { 0x148, 0x26 }, { 0x150, 0x28 }, { 0x14B, 0x25 }, { 0x14D, 0x27 } };
-        bool aHeld = false, bHeld = false, startHeld = false;
+        bool aHeld = false, bHeld = false, xHeld = false, yHeld = false, startHeld = false;
         while (true)
         {
             std::this_thread::sleep_for(std::chrono::milliseconds(8));
@@ -115,7 +124,8 @@ namespace
                 startHeld = p.start;
                 key(0x01, 0x1B, p.start); // Escape
             }
-            const bool menu = keyDest() != 0;
+            const bool shop = inShop();
+            const bool menu = keyDest() != 0 || shop;
             const bool want[4] = { menu && (p.up || p.ly > 0.6f), menu && (p.down || p.ly < -0.6f),
                                    menu && (p.left || p.lx < -0.6f), menu && (p.right || p.lx > 0.6f) };
             for (int k = 0; k < 4; k++)
@@ -125,7 +135,8 @@ namespace
                 {
                     key(d.sc, d.vk, true);
                     key(d.sc, d.vk, false);
-                    d.next = now + std::chrono::milliseconds(d.held ? 120 : 400);
+                    // (the shop ignores presses closer than 0.2 s)
+                    d.next = now + std::chrono::milliseconds(d.held ? (shop ? 250 : 120) : 400);
                     d.held = true;
                 }
                 else if (!want[k])
@@ -140,7 +151,21 @@ namespace
             if (b != bHeld)
             {
                 bHeld = b;
-                key(0x01, 0x1B, b); // Escape
+                if (shop)
+                    key(0x14B, 0x25, b); // Left: back to the categories (cancels a pending deal)
+                else
+                    key(0x01, 0x1B, b); // Escape
+            }
+            const bool x = shop && (p.buttons & 4), y = shop && (p.buttons & 8);
+            if (x != xHeld)
+            {
+                xHeld = x;
+                key(0x2D, 'X', x); // key3: "no deal"
+            }
+            if (y != yHeld)
+            {
+                yHeld = y;
+                key(0x15, 'Y', y); // key1: "deal" (buy)
             }
         }
     }
@@ -246,6 +271,7 @@ namespace pad
         return g_real.connected;
     }
     int keyDest() { return (int)::keyDest(); }
+    bool inShop() { return ::inShop(); }
     void disconnected()
     {
         std::lock_guard lock(g_padMutex);
@@ -288,7 +314,7 @@ WIN32API(winmm, joyGetPosEx, 2)
     if (ARG(0) != 0)
         RET(167); // JOYERR_UNPLUGGED
     Pad p = current();
-    if (keyDest() != 0) // menus/console: the pad drives the keyboard instead
+    if (keyDest() != 0 || inShop()) // menus, console, the shop: the pad drives the keyboard instead
         p = Pad{};
     if (layoutShown()) // B puts the note away (menu thread) instead of crouching
         p.buttons &= ~2u;

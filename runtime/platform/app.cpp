@@ -8,6 +8,7 @@
 //                           enter escape space tab up down left right ctrl shift alt f1-f12 mouse1,
 //                           "type text", lookN)
 //   KP_MEMSNAP=dir,t1,...   kingpin.exe data snapshots
+//   KP_WATCH=addr,addr      debug: log guest dwords (hex) every second
 //   KP_DISC=path            the CD (D:\): a directory or the data track's .iso image
 //   KP_TRACE_HLE / KP_TRACE_GPA / KP_GL_ERRORS / KP_NO_AUDIO / KP_CUE
 #include "app.h"
@@ -337,6 +338,33 @@ bool appInit(const AppConfig& cfg)
         inputScript(s);
     if (const char* s = getenv("KP_MEMSNAP"))
         memSnapshots(s);
+    if (const char* s = getenv("KP_WATCH")) // debug: "addr,addr,..." logs guest dwords every second
+    {
+        std::vector<uint32_t> addrs;
+        for (const char* p = s; *p;)
+        {
+            addrs.push_back((uint32_t)strtoul(p, (char**)&p, 16));
+            while (*p == ',')
+                p++;
+        }
+        std::thread([addrs] {
+            while (true)
+            {
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::string line;
+                for (uint32_t a : addrs)
+                {
+                    const uint32_t v = rd32(a);
+                    float f;
+                    memcpy(&f, &v, 4);
+                    char buf[64];
+                    snprintf(buf, sizeof buf, " %08X=%08X(%g)", a, v, f);
+                    line += buf;
+                }
+                logf("[watch]%s", line.c_str());
+            }
+        }).detach();
+    }
     if (seconds > 0)
         std::thread([seconds] {
             std::this_thread::sleep_for(std::chrono::duration<double>(seconds));
