@@ -1,0 +1,32 @@
+# ---- Copyrighted game material: never commit -----------------------------------------
+# Your installed game, disc image, CD audio and anything extracted or derived from them.
+/game/
+/track1.iso
+/cd/
+/disc/
+/extract/
+*.iso
+*.bin
+*.cue
+*.cab
+*.pak
+*.exe
+*.dll
+# Recompiled game code: a translation of the game's binaries. Generate it locally (README).
+/gen/
+/gen_intro/
+# HD textures are upscaled game art.
+/game/main/hd/
+
+# ---- Local build and tool output ------------------------------------------------------
+/build*/
+/smoke/
+/scratchpad/
+*.log
+.venv/
+.cache/
+__pycache__/
+tools/models/
+*.pth
+*.mobileprovision
+.DS_Store

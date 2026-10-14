@@ -1,0 +1,1232 @@
+004041DC 2 C1,C2,C3,C5  # mov ax, bx
+004041E2 2 C1,C2,C3,C5  # mov ax, bx
+004041E7 2 C1,C2,C3,C5  # mov ax, bx
+004041ED 2 C1,C2,C3,C5  # mov ax, bx
+004041F5 2 C1,C2,C3,C5  # mov ax, bx
+004041FB 2 C1,C2,C3,C5  # mov ax, bx
+00404200 2 C1,C2,C3,C5  # mov ax, bx
+00404206 2 C1,C2,C3,C5  # mov ax, bx
+0040420E 2 C1,C2,C3,C5  # mov ax, bx
+00404214 2 C1,C2,C3,C5  # mov ax, bx
+00404219 2 C1,C2,C3,C5  # mov ax, bx
+0040421F 2 C1,C2,C3,C5  # mov ax, bx
+00404227 2 C1,C2,C3,C5  # mov ax, bx
+0040422D 2 C1,C2,C3,C5  # mov ax, bx
+00404232 2 C1,C2,C3,C5  # mov ax, bx
+00404238 2 C1,C2,C3,C5  # mov ax, bx
+00404240 2 C1,C2,C3,C5  # mov ax, bx
+00404246 2 C1,C2,C3,C5  # mov ax, bx
+0040424B 2 C1,C2,C3,C5  # mov ax, bx
+00404251 2 C1,C2,C3,C5  # mov ax, bx
+00404259 2 C1,C2,C3,C5  # mov ax, bx
+0040425F 2 C1,C2,C3,C5  # mov ax, bx
+00404264 2 C1,C2,C3,C5  # mov ax, bx
+0040426A 2 C1,C2,C3,C5  # mov ax, bx
+00404272 2 C1,C2,C3,C5  # mov ax, bx
+00404278 2 C1,C2,C3,C5  # mov ax, bx
+0040427D 2 C1,C2,C3,C5  # mov ax, bx
+00404283 2 C1,C2,C3,C5  # mov ax, bx
+0040428B 2 C1,C2,C3,C5  # mov ax, bx
+00404291 2 C1,C2,C3,C5  # mov ax, bx
+00404296 2 C1,C2,C3,C5  # mov ax, bx
+0040429C 2 C1,C2,C3,C5  # mov ax, bx
+00404328 2 C1,C2,C3,C5  # mov ax, bx
+0040432E 2 C1,C2,C3,C5  # mov ax, bx
+00404336 2 C1,C2,C3,C5  # mov ax, bx
+0040433C 2 C1,C2,C3,C5  # mov ax, bx
+00404349 2 C1,C2,C3,C5  # mov ax, bx
+0040434F 2 C1,C2,C3,C5  # mov ax, bx
+00404357 2 C1,C2,C3,C5  # mov ax, bx
+0040435D 2 C1,C2,C3,C5  # mov ax, bx
+0040436A 2 C1,C2,C3,C5  # mov ax, bx
+00404370 2 C1,C2,C3,C5  # mov ax, bx
+00404378 2 C1,C2,C3,C5  # mov ax, bx
+0040437E 2 C1,C2,C3,C5  # mov ax, bx
+0040438B 2 C1,C2,C3,C5  # mov ax, bx
+00404391 2 C1,C2,C3,C5  # mov ax, bx
+00404399 2 C1,C2,C3,C5  # mov ax, bx
+0040439F 2 C1,C2,C3,C5  # mov ax, bx
+00404494 2 C1,C2,C3,C5  # mov ax, bx
+0040449A 2 C1,C2,C3,C5  # mov ax, bx
+004044A1 2 C1,C2,C3,C5  # mov ax, bx
+004044A7 2 C1,C2,C3,C5  # mov ax, bx
+004044AE 2 C1,C2,C3,C5  # mov ax, bx
+004044B4 2 C1,C2,C3,C5  # mov ax, bx
+004044BB 2 C1,C2,C3,C5  # mov ax, bx
+004044C1 2 C1,C2,C3,C5  # mov ax, bx
+004044DD 2 C1,C2,C3,C5  # mov ax, bx
+004044E3 2 C1,C2,C3,C5  # mov ax, bx
+004044EA 2 C1,C2,C3,C5  # mov ax, bx
+004044F0 2 C1,C2,C3,C5  # mov ax, bx
+004044F7 2 C1,C2,C3,C5  # mov ax, bx
+004044FD 2 C1,C2,C3,C5  # mov ax, bx
+00404504 2 C1,C2,C3,C5  # mov ax, bx
+0040450A 2 C1,C2,C3,C5  # mov ax, bx
+0040452F 2 C1,C2,C3,C5  # mov ax, bx
+00404535 2 C1,C2,C3,C5  # mov ax, bx
+0040453C 2 C1,C2,C3,C5  # mov ax, bx
+00404542 2 C1,C2,C3,C5  # mov ax, bx
+00404549 2 C1,C2,C3,C5  # mov ax, bx
+0040454F 2 C1,C2,C3,C5  # mov ax, bx
+00404556 2 C1,C2,C3,C5  # mov ax, bx
+0040455C 2 C1,C2,C3,C5  # mov ax, bx
+00404578 2 C1,C2,C3,C5  # mov ax, bx
+0040457E 2 C1,C2,C3,C5  # mov ax, bx
+00404585 2 C1,C2,C3,C5  # mov ax, bx
+0040458B 2 C1,C2,C3,C5  # mov ax, bx
+00404592 2 C1,C2,C3,C5  # mov ax, bx
+00404598 2 C1,C2,C3,C5  # mov ax, bx
+0040459F 2 C1,C2,C3,C5  # mov ax, bx
+004045A5 2 C1,C2,C3,C5  # mov ax, bx
+00404698 2 C1,C2,C3,C5  # mov ax, bx
+0040469E 2 C1,C2,C3,C5  # mov ax, bx
+004046A5 2 C1,C2,C3,C5  # mov ax, bx
+004046AB 2 C1,C2,C3,C5  # mov ax, bx
+004046B2 2 C1,C2,C3,C5  # mov ax, bx
+004046B8 2 C1,C2,C3,C5  # mov ax, bx
+004046BF 2 C1,C2,C3,C5  # mov ax, bx
+004046C5 2 C1,C2,C3,C5  # mov ax, bx
+004046CC 2 C1,C2,C3,C5  # mov ax, bx
+004046D2 2 C1,C2,C3,C5  # mov ax, bx
+004046D9 2 C1,C2,C3,C5  # mov ax, bx
+004046DF 2 C1,C2,C3,C5  # mov ax, bx
+004046E6 2 C1,C2,C3,C5  # mov ax, bx
+004046EC 2 C1,C2,C3,C5  # mov ax, bx
+004046F3 2 C1,C2,C3,C5  # mov ax, bx
+004046F9 2 C1,C2,C3,C5  # mov ax, bx
+0040471E 2 C1,C2,C3,C5  # mov ax, bx
+00404724 2 C1,C2,C3,C5  # mov ax, bx
+0040472B 2 C1,C2,C3,C5  # mov ax, bx
+00404731 2 C1,C2,C3,C5  # mov ax, bx
+00404738 2 C1,C2,C3,C5  # mov ax, bx
+0040473E 2 C1,C2,C3,C5  # mov ax, bx
+00404745 2 C1,C2,C3,C5  # mov ax, bx
+0040474B 2 C1,C2,C3,C5  # mov ax, bx
+00404752 2 C1,C2,C3,C5  # mov ax, bx
+00404758 2 C1,C2,C3,C5  # mov ax, bx
+0040475F 2 C1,C2,C3,C5  # mov ax, bx
+00404765 2 C1,C2,C3,C5  # mov ax, bx
+0040476C 2 C1,C2,C3,C5  # mov ax, bx
+00404772 2 C1,C2,C3,C5  # mov ax, bx
+00404779 2 C1,C2,C3,C5  # mov ax, bx
+0040477F 2 C1,C2,C3,C5  # mov ax, bx
+00404864 2 C1,C2,C3,C5  # mov ax, bx
+0040486A 2 C1,C2,C3,C5  # mov ax, bx
+0040486F 2 C1,C2,C3,C5  # mov ax, bx
+00404875 2 C1,C2,C3,C5  # mov ax, bx
+0040487D 2 C1,C2,C3,C5  # mov ax, bx
+00404883 2 C1,C2,C3,C5  # mov ax, bx
+00404888 2 C1,C2,C3,C5  # mov ax, bx
+0040488E 2 C1,C2,C3,C5  # mov ax, bx
+00404896 2 C1,C2,C3,C5  # mov ax, bx
+0040489C 2 C1,C2,C3,C5  # mov ax, bx
+004048A1 2 C1,C2,C3,C5  # mov ax, bx
+004048A7 2 C1,C2,C3,C5  # mov ax, bx
+004048AF 2 C1,C2,C3,C5  # mov ax, bx
+004048B5 2 C1,C2,C3,C5  # mov ax, bx
+004048BA 2 C1,C2,C3,C5  # mov ax, bx
+004048C0 2 C1,C2,C3,C5  # mov ax, bx
+004048DD 2 C1,C2,C3,C5  # mov ax, bx
+004048E3 2 C1,C2,C3,C5  # mov ax, bx
+004048E8 2 C1,C2,C3,C5  # mov ax, bx
+004048EE 2 C1,C2,C3,C5  # mov ax, bx
+004048F6 2 C1,C2,C3,C5  # mov ax, bx
+004048FC 2 C1,C2,C3,C5  # mov ax, bx
+00404901 2 C1,C2,C3,C5  # mov ax, bx
+00404907 2 C1,C2,C3,C5  # mov ax, bx
+0040490F 2 C1,C2,C3,C5  # mov ax, bx
+00404915 2 C1,C2,C3,C5  # mov ax, bx
+0040491A 2 C1,C2,C3,C5  # mov ax, bx
+00404920 2 C1,C2,C3,C5  # mov ax, bx
+00404928 2 C1,C2,C3,C5  # mov ax, bx
+0040492E 2 C1,C2,C3,C5  # mov ax, bx
+00404933 2 C1,C2,C3,C5  # mov ax, bx
+00404939 2 C1,C2,C3,C5  # mov ax, bx
+00404ACC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404ACE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404AD3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404AD5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404AD9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404ADB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404AE0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404AE2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404AE9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404AEB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404AF0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404AF2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404AF6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404AF8 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404AFD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404AFF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B06 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B08 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B0D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B0F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B13 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B15 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B1A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B1C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B23 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B25 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B2A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B2C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B30 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B32 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B37 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B39 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B40 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B42 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B47 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B49 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B4D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B4F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B54 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B56 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B5D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B5F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B64 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B66 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B6A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B6C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B71 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B73 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B7A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B7C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B81 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B83 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B87 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B89 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B8E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B90 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B97 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404B99 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404B9E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404BA0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404BA4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404BA6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404BAB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404BAD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404C30 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404C37 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404C40 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404C47 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404C55 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404C5C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404C65 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404C6C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404C7A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404C81 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404C8A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404C91 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404C9F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404CA6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404CAF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404CB6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404D9C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404DA3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404DA9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404DB0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404DB9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404DC0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404DC6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404DCD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404DD6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404DDD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404DE3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404DEA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404DF3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404DFA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E00 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E07 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E10 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E17 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E1D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E24 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E2D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E34 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E3A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E41 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E4A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E51 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E57 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E5E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E67 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E6E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404E74 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404E7B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F58 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F5A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404F5F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F61 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404F68 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F6A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404F6F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F71 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404F7D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F7F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404F84 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F86 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404F8D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F8F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404F94 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404F96 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404FA2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404FA4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404FA9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404FAB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404FB2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404FB4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404FB9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404FBB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404FC7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404FC9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404FCE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404FD0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404FD7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404FD9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00404FDE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00404FE0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405170 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405172 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405177 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405179 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040517F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405181 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405186 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405188 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040518E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405190 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405195 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405197 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040519D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040519F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051A4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051A6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051B4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051B6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051BB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051BD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051C3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051C5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051CA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051CC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051D2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051D4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051D9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051DB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051E1 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051E3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004051E8 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004051EA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405201 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405203 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405208 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040520A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405210 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405212 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405217 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405219 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040521F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405221 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405226 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405228 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040522E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405230 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405235 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405237 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405245 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405247 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040524C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040524E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405254 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405256 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040525B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040525D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405263 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405265 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040526A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040526C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405272 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405274 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405279 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040527B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405408 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040540A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040540F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405411 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405417 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405419 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040541E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405420 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405426 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405428 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040542D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040542F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405435 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405437 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040543C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040543E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405444 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405446 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040544B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040544D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405453 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405455 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040545A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040545C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405462 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405464 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405469 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040546B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405471 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405473 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405478 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040547A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405491 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405493 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405498 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040549A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054A0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054A2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054A7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054A9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054AF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054B1 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054B6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054B8 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054BE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054C0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054C5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054C7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054CD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054CF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054D4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054D6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054DC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054DE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054E3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054E5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054EB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054ED 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054F2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054F4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004054FA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004054FC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405501 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405503 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405680 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405682 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405687 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405689 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040568D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040568F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405694 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405696 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040569D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040569F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056A4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056A6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056AA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056AC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056B1 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056B3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056BA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056BC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056C1 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056C3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056C7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056C9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056CE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056D0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056D7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056D9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056DE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056E0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056E4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056E6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056EB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056ED 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004056FC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004056FE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405703 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405705 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405709 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040570B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405710 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405712 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405719 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040571B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405720 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405722 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405726 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405728 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040572D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040572F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405736 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405738 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040573D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040573F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405743 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405745 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040574A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040574C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405753 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405755 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040575A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040575C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405760 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405762 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405767 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00405769 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00405BF0 2 C1,C2,C3,C5  # mov ax, bx
+00405BF6 2 C1,C2,C3,C5  # mov ax, bx
+00405BFB 2 C1,C2,C3,C5  # mov ax, bx
+00405C01 2 C1,C2,C3,C5  # mov ax, bx
+00405C09 2 C1,C2,C3,C5  # mov ax, bx
+00405C0F 2 C1,C2,C3,C5  # mov ax, bx
+00405C14 2 C1,C2,C3,C5  # mov ax, bx
+00405C1A 2 C1,C2,C3,C5  # mov ax, bx
+00405C22 2 C1,C2,C3,C5  # mov ax, bx
+00405C28 2 C1,C2,C3,C5  # mov ax, bx
+00405C2D 2 C1,C2,C3,C5  # mov ax, bx
+00405C33 2 C1,C2,C3,C5  # mov ax, bx
+00405C3B 2 C1,C2,C3,C5  # mov ax, bx
+00405C41 2 C1,C2,C3,C5  # mov ax, bx
+00405C46 2 C1,C2,C3,C5  # mov ax, bx
+00405C4C 2 C1,C2,C3,C5  # mov ax, bx
+00405CD8 2 C1,C2,C3,C5  # mov ax, bx
+00405CDE 2 C1,C2,C3,C5  # mov ax, bx
+00405CE3 2 C1,C2,C3,C5  # mov ax, bx
+00405CE9 2 C1,C2,C3,C5  # mov ax, bx
+00405CF1 2 C1,C2,C3,C5  # mov ax, bx
+00405CF7 2 C1,C2,C3,C5  # mov ax, bx
+00405CFC 2 C1,C2,C3,C5  # mov ax, bx
+00405D02 2 C1,C2,C3,C5  # mov ax, bx
+00405D0A 2 C1,C2,C3,C5  # mov ax, bx
+00405D10 2 C1,C2,C3,C5  # mov ax, bx
+00405D15 2 C1,C2,C3,C5  # mov ax, bx
+00405D1B 2 C1,C2,C3,C5  # mov ax, bx
+00405D23 2 C1,C2,C3,C5  # mov ax, bx
+00405D29 2 C1,C2,C3,C5  # mov ax, bx
+00405D2E 2 C1,C2,C3,C5  # mov ax, bx
+00405D34 2 C1,C2,C3,C5  # mov ax, bx
+00405DDC 2 C1,C2,C3,C5  # mov ax, bx
+00405DE2 2 C1,C2,C3,C5  # mov ax, bx
+00405DE9 2 C1,C2,C3,C5  # mov ax, bx
+00405DEF 2 C1,C2,C3,C5  # mov ax, bx
+00405E0B 2 C1,C2,C3,C5  # mov ax, bx
+00405E11 2 C1,C2,C3,C5  # mov ax, bx
+00405E18 2 C1,C2,C3,C5  # mov ax, bx
+00405E1E 2 C1,C2,C3,C5  # mov ax, bx
+00405E43 2 C1,C2,C3,C5  # mov ax, bx
+00405E49 2 C1,C2,C3,C5  # mov ax, bx
+00405E50 2 C1,C2,C3,C5  # mov ax, bx
+00405E56 2 C1,C2,C3,C5  # mov ax, bx
+00405E72 2 C1,C2,C3,C5  # mov ax, bx
+00405E78 2 C1,C2,C3,C5  # mov ax, bx
+00405E7F 2 C1,C2,C3,C5  # mov ax, bx
+00405E85 2 C1,C2,C3,C5  # mov ax, bx
+00405F30 2 C1,C2,C3,C5  # mov ax, bx
+00405F36 2 C1,C2,C3,C5  # mov ax, bx
+00405F3D 2 C1,C2,C3,C5  # mov ax, bx
+00405F43 2 C1,C2,C3,C5  # mov ax, bx
+00405F4A 2 C1,C2,C3,C5  # mov ax, bx
+00405F50 2 C1,C2,C3,C5  # mov ax, bx
+00405F57 2 C1,C2,C3,C5  # mov ax, bx
+00405F5D 2 C1,C2,C3,C5  # mov ax, bx
+00405F82 2 C1,C2,C3,C5  # mov ax, bx
+00405F88 2 C1,C2,C3,C5  # mov ax, bx
+00405F8F 2 C1,C2,C3,C5  # mov ax, bx
+00405F95 2 C1,C2,C3,C5  # mov ax, bx
+00405F9C 2 C1,C2,C3,C5  # mov ax, bx
+00405FA2 2 C1,C2,C3,C5  # mov ax, bx
+00405FA9 2 C1,C2,C3,C5  # mov ax, bx
+00405FAF 2 C1,C2,C3,C5  # mov ax, bx
+00406040 2 C1,C2,C3,C5  # mov ax, bx
+00406046 2 C1,C2,C3,C5  # mov ax, bx
+0040604B 2 C1,C2,C3,C5  # mov ax, bx
+00406051 2 C1,C2,C3,C5  # mov ax, bx
+00406059 2 C1,C2,C3,C5  # mov ax, bx
+0040605F 2 C1,C2,C3,C5  # mov ax, bx
+00406064 2 C1,C2,C3,C5  # mov ax, bx
+0040606A 2 C1,C2,C3,C5  # mov ax, bx
+00406087 2 C1,C2,C3,C5  # mov ax, bx
+0040608D 2 C1,C2,C3,C5  # mov ax, bx
+00406092 2 C1,C2,C3,C5  # mov ax, bx
+00406098 2 C1,C2,C3,C5  # mov ax, bx
+004060A0 2 C1,C2,C3,C5  # mov ax, bx
+004060A6 2 C1,C2,C3,C5  # mov ax, bx
+004060AB 2 C1,C2,C3,C5  # mov ax, bx
+004060B1 2 C1,C2,C3,C5  # mov ax, bx
+0040619C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040619E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061A3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061A5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061A9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061AB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061B0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061B2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061B9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061BB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061C0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061C2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061C6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061C8 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061CD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061CF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061D6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061D8 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061DD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061DF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061E3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061E5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061EA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061EC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061F3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061F5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004061FA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004061FC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406200 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406202 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406207 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406209 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406288 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040628F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406295 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040629C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004062A5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004062AC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004062B2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004062B9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004062C2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004062C9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004062CF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004062D6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004062DF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004062E6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004062EC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004062F3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406380 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406387 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040638D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406394 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040639D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004063A4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004063AA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004063B1 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004063BA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004063C1 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004063C7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004063CE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004063D7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004063DE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004063E4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004063EB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064C0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064C2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004064C7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064C9 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004064CD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064CF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004064D4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064D6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004064DD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064DF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004064E4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064E6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004064EA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064EC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004064F1 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064F3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004064FA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004064FC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406501 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406503 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406507 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406509 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040650E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406510 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406517 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406519 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040651E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406520 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406524 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406526 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040652B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040652D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040660C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040660E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406613 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406615 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040661B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040661D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406622 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406624 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406632 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406634 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406639 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040663B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406641 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406643 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406648 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040664A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406661 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406663 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406668 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040666A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406670 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406672 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406677 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406679 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406687 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406689 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040668E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406690 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406696 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406698 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040669D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040669F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406780 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406782 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406787 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406789 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040678F 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406791 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406796 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406798 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040679E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067A0 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067A5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067A7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067AD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067AF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067B4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067B6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067CD 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067CF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067D4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067D6 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067DC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067DE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067E3 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067E5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067EB 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067ED 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067F2 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067F4 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004067FA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004067FC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406801 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406803 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004068D8 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004068DA 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004068DF 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004068E1 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004068E5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004068E7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004068EC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004068EE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004068F5 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004068F7 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+004068FC 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+004068FE 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406902 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406904 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406909 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040690B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040691A 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040691C 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406921 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406923 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406927 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406929 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040692E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406930 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406937 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406939 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040693E 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406940 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406944 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+00406946 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+0040694B 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov al, bl
+0040694D 1 C1,C3,C5,C7,E1,E3,E5,E7  # mov ah, bl
+00406E3C 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00406E3F 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00406E42 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00406E45 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00406E4A 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00406E4D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00406E50 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00406E53 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00406E58 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00406E5B 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00406E5E 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00406E61 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00406E66 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00406E69 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00406E6C 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00406E6F 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00406E74 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00406E77 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00406E7A 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00406E7D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00406E82 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00406E85 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00406E88 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00406E8B 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00406E90 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00406E93 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00406E96 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00406E99 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00406E9E 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00406EA1 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00406EA4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00406EA7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00406F6C 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406F73 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406F7C 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406F85 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406F91 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406F98 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FA1 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FAA 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FB6 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FBD 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FC6 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FCF 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FDB 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FE2 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FEB 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+00406FF4 1 4F,57,5F,6F,C1,C3  # mov eax, ebx
+004071C4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004071C7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004071CC 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004071CF 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004071D4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004071D7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004071DC 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004071DF 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004071F4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004071F7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004071FC 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004071FF 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407204 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407207 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040720C 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+0040720F 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040722D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407230 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407235 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407238 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040723D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407240 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407245 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407248 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040725D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407260 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407265 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407268 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040726D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407270 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407275 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407278 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004073D4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004073D7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004073DC 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004073DF 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004073E4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004073E7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004073EC 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004073EF 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004073F4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004073F7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004073FC 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004073FF 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407404 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407407 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040740C 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+0040740F 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040742D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407430 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407435 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407438 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040743D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407440 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407445 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407448 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040744D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407450 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407455 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407458 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+0040745D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407460 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407465 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407468 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004075B8 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004075BB 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004075BE 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+004075C1 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+004075C6 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004075C9 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004075CC 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+004075CF 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+004075D4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004075D7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004075DA 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+004075DD 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+004075E2 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+004075E5 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+004075E8 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+004075EB 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407600 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407603 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407606 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407609 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+0040760E 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407611 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407614 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407617 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+0040761C 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+0040761F 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407622 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407625 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+0040762A 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+0040762D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407630 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407633 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407864 2 C1,C2,C3,C5  # mov ax, bx
+0040786A 2 C1,C2,C3,C5  # mov ax, bx
+0040786F 2 C1,C2,C3,C5  # mov ax, bx
+00407875 2 C1,C2,C3,C5  # mov ax, bx
+0040787B 2 C1,C2,C3,C5  # mov ax, bx
+00407881 2 C1,C2,C3,C5  # mov ax, bx
+00407887 2 C1,C2,C3,C5  # mov ax, bx
+0040788D 2 C1,C2,C3,C5  # mov ax, bx
+00407895 2 C1,C2,C3,C5  # mov ax, bx
+0040789B 2 C1,C2,C3,C5  # mov ax, bx
+004078A0 2 C1,C2,C3,C5  # mov ax, bx
+004078A6 2 C1,C2,C3,C5  # mov ax, bx
+004078AC 2 C1,C2,C3,C5  # mov ax, bx
+004078B2 2 C1,C2,C3,C5  # mov ax, bx
+004078B8 2 C1,C2,C3,C5  # mov ax, bx
+004078BE 2 C1,C2,C3,C5  # mov ax, bx
+004078C6 2 C1,C2,C3,C5  # mov ax, bx
+004078CC 2 C1,C2,C3,C5  # mov ax, bx
+004078D1 2 C1,C2,C3,C5  # mov ax, bx
+004078D7 2 C1,C2,C3,C5  # mov ax, bx
+004078DD 2 C1,C2,C3,C5  # mov ax, bx
+004078E3 2 C1,C2,C3,C5  # mov ax, bx
+004078E9 2 C1,C2,C3,C5  # mov ax, bx
+004078EF 2 C1,C2,C3,C5  # mov ax, bx
+004078F7 2 C1,C2,C3,C5  # mov ax, bx
+004078FD 2 C1,C2,C3,C5  # mov ax, bx
+00407902 2 C1,C2,C3,C5  # mov ax, bx
+00407908 2 C1,C2,C3,C5  # mov ax, bx
+0040790E 2 C1,C2,C3,C5  # mov ax, bx
+00407914 2 C1,C2,C3,C5  # mov ax, bx
+0040791A 2 C1,C2,C3,C5  # mov ax, bx
+00407920 2 C1,C2,C3,C5  # mov ax, bx
+00407928 2 C1,C2,C3,C5  # mov ax, bx
+0040792E 2 C1,C2,C3,C5  # mov ax, bx
+00407933 2 C1,C2,C3,C5  # mov ax, bx
+00407939 2 C1,C2,C3,C5  # mov ax, bx
+0040793F 2 C1,C2,C3,C5  # mov ax, bx
+00407945 2 C1,C2,C3,C5  # mov ax, bx
+0040794B 2 C1,C2,C3,C5  # mov ax, bx
+00407951 2 C1,C2,C3,C5  # mov ax, bx
+00407959 2 C1,C2,C3,C5  # mov ax, bx
+0040795F 2 C1,C2,C3,C5  # mov ax, bx
+00407964 2 C1,C2,C3,C5  # mov ax, bx
+0040796A 2 C1,C2,C3,C5  # mov ax, bx
+00407970 2 C1,C2,C3,C5  # mov ax, bx
+00407976 2 C1,C2,C3,C5  # mov ax, bx
+0040797C 2 C1,C2,C3,C5  # mov ax, bx
+00407982 2 C1,C2,C3,C5  # mov ax, bx
+0040798A 2 C1,C2,C3,C5  # mov ax, bx
+00407990 2 C1,C2,C3,C5  # mov ax, bx
+00407995 2 C1,C2,C3,C5  # mov ax, bx
+0040799B 2 C1,C2,C3,C5  # mov ax, bx
+004079A1 2 C1,C2,C3,C5  # mov ax, bx
+004079A7 2 C1,C2,C3,C5  # mov ax, bx
+004079AD 2 C1,C2,C3,C5  # mov ax, bx
+004079B3 2 C1,C2,C3,C5  # mov ax, bx
+004079BB 2 C1,C2,C3,C5  # mov ax, bx
+004079C1 2 C1,C2,C3,C5  # mov ax, bx
+004079C6 2 C1,C2,C3,C5  # mov ax, bx
+004079CC 2 C1,C2,C3,C5  # mov ax, bx
+004079D2 2 C1,C2,C3,C5  # mov ax, bx
+004079D8 2 C1,C2,C3,C5  # mov ax, bx
+004079DE 2 C1,C2,C3,C5  # mov ax, bx
+004079E4 2 C1,C2,C3,C5  # mov ax, bx
+00407AE8 1 C1,C2,C3,C5  # mov eax, ebx
+00407AEF 1 C1,C2,C3,C5  # mov eax, ebx
+00407AF8 1 C1,C2,C3,C5  # mov eax, ebx
+00407B01 1 C1,C2,C3,C5  # mov eax, ebx
+00407B0D 1 C1,C2,C3,C5  # mov eax, ebx
+00407B14 1 C1,C2,C3,C5  # mov eax, ebx
+00407B1D 1 C1,C2,C3,C5  # mov eax, ebx
+00407B26 1 C1,C2,C3,C5  # mov eax, ebx
+00407B32 1 C1,C2,C3,C5  # mov eax, ebx
+00407B39 1 C1,C2,C3,C5  # mov eax, ebx
+00407B42 1 C1,C2,C3,C5  # mov eax, ebx
+00407B4B 1 C1,C2,C3,C5  # mov eax, ebx
+00407B57 1 C1,C2,C3,C5  # mov eax, ebx
+00407B5E 1 C1,C2,C3,C5  # mov eax, ebx
+00407B67 1 C1,C2,C3,C5  # mov eax, ebx
+00407B70 1 C1,C2,C3,C5  # mov eax, ebx
+00407CD4 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407CD7 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407CDA 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407CDD 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407CE2 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407CE5 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407CE8 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407CEB 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407CF0 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407CF3 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407CF6 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407CF9 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407CFE 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407D01 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407D04 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407D07 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407D0C 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407D0F 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407D12 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407D15 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407D1A 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407D1D 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407D20 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407D23 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407D28 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407D2B 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407D2E 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407D31 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407D36 1 4F,57,5D,5F,6F  # mov dword ptr [ebp], ebx
+00407D39 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 4], ebx
+00407D3C 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 8], ebx
+00407D3F 1 4F,57,5D,5F,6F  # mov dword ptr [ebp + 0xc], ebx
+00407EA0 2 C1,C2,C3,C5  # mov ax, bx
+00407EA6 2 C1,C2,C3,C5  # mov ax, bx
+00407EAE 2 C1,C2,C3,C5  # mov ax, bx
+00407EB4 2 C1,C2,C3,C5  # mov ax, bx
+00407EBE 2 C1,C2,C3,C5  # mov ax, bx
+00407EC4 2 C1,C2,C3,C5  # mov ax, bx
+00407ECE 2 C1,C2,C3,C5  # mov ax, bx
+00407ED4 2 C1,C2,C3,C5  # mov ax, bx
+00407EE1 2 C1,C2,C3,C5  # mov ax, bx
+00407EE7 2 C1,C2,C3,C5  # mov ax, bx
+00407EEF 2 C1,C2,C3,C5  # mov ax, bx
+00407EF5 2 C1,C2,C3,C5  # mov ax, bx
+00407EFF 2 C1,C2,C3,C5  # mov ax, bx
+00407F05 2 C1,C2,C3,C5  # mov ax, bx
+00407F0F 2 C1,C2,C3,C5  # mov ax, bx
+00407F15 2 C1,C2,C3,C5  # mov ax, bx
+00407F22 2 C1,C2,C3,C5  # mov ax, bx
+00407F28 2 C1,C2,C3,C5  # mov ax, bx
+00407F30 2 C1,C2,C3,C5  # mov ax, bx
+00407F36 2 C1,C2,C3,C5  # mov ax, bx
+00407F40 2 C1,C2,C3,C5  # mov ax, bx
+00407F46 2 C1,C2,C3,C5  # mov ax, bx
+00407F50 2 C1,C2,C3,C5  # mov ax, bx
+00407F56 2 C1,C2,C3,C5  # mov ax, bx
+00407F63 2 C1,C2,C3,C5  # mov ax, bx
+00407F69 2 C1,C2,C3,C5  # mov ax, bx
+00407F71 2 C1,C2,C3,C5  # mov ax, bx
+00407F77 2 C1,C2,C3,C5  # mov ax, bx
+00407F81 2 C1,C2,C3,C5  # mov ax, bx
+00407F87 2 C1,C2,C3,C5  # mov ax, bx
+00407F91 2 C1,C2,C3,C5  # mov ax, bx
+00407F97 2 C1,C2,C3,C5  # mov ax, bx
+004081E8 2 C1,C2,C3,C5  # mov ax, bx
+004081EE 2 C1,C2,C3,C5  # mov ax, bx
+004081F3 2 C1,C2,C3,C5  # mov ax, bx
+004081F9 2 C1,C2,C3,C5  # mov ax, bx
+00408201 2 C1,C2,C3,C5  # mov ax, bx
+00408207 2 C1,C2,C3,C5  # mov ax, bx
+0040820C 2 C1,C2,C3,C5  # mov ax, bx
+00408212 2 C1,C2,C3,C5  # mov ax, bx
+0040821A 2 C1,C2,C3,C5  # mov ax, bx
+00408220 2 C1,C2,C3,C5  # mov ax, bx
+00408225 2 C1,C2,C3,C5  # mov ax, bx
+0040822B 2 C1,C2,C3,C5  # mov ax, bx
+00408233 2 C1,C2,C3,C5  # mov ax, bx
+00408239 2 C1,C2,C3,C5  # mov ax, bx
+0040823E 2 C1,C2,C3,C5  # mov ax, bx
+00408244 2 C1,C2,C3,C5  # mov ax, bx
+004082BD 2 C1,C2,C3,C5  # mov ax, bx
+004082C3 2 C1,C2,C3,C5  # mov ax, bx
+004082C8 2 C1,C2,C3,C5  # mov ax, bx
+004082CE 2 C1,C2,C3,C5  # mov ax, bx
+004082D6 2 C1,C2,C3,C5  # mov ax, bx
+004082DC 2 C1,C2,C3,C5  # mov ax, bx
+004082E1 2 C1,C2,C3,C5  # mov ax, bx
+004082E7 2 C1,C2,C3,C5  # mov ax, bx
+004082EF 2 C1,C2,C3,C5  # mov ax, bx
+004082F5 2 C1,C2,C3,C5  # mov ax, bx
+004082FA 2 C1,C2,C3,C5  # mov ax, bx
+00408300 2 C1,C2,C3,C5  # mov ax, bx
+00408308 2 C1,C2,C3,C5  # mov ax, bx
+0040830E 2 C1,C2,C3,C5  # mov ax, bx
+00408313 2 C1,C2,C3,C5  # mov ax, bx
+00408319 2 C1,C2,C3,C5  # mov ax, bx
+0040839B 2 C1,C2,C3,C5  # mov ax, bx
+004083A1 2 C1,C2,C3,C5  # mov ax, bx
+004083A6 2 C1,C2,C3,C5  # mov ax, bx
+004083AC 2 C1,C2,C3,C5  # mov ax, bx
+004083B4 2 C1,C2,C3,C5  # mov ax, bx
+004083BA 2 C1,C2,C3,C5  # mov ax, bx
+004083BF 2 C1,C2,C3,C5  # mov ax, bx
+004083C5 2 C1,C2,C3,C5  # mov ax, bx
+004083CD 2 C1,C2,C3,C5  # mov ax, bx
+004083D3 2 C1,C2,C3,C5  # mov ax, bx
+004083D8 2 C1,C2,C3,C5  # mov ax, bx
+004083DE 2 C1,C2,C3,C5  # mov ax, bx
+004083E6 2 C1,C2,C3,C5  # mov ax, bx
+004083EC 2 C1,C2,C3,C5  # mov ax, bx
+004083F1 2 C1,C2,C3,C5  # mov ax, bx
+004083F7 2 C1,C2,C3,C5  # mov ax, bx
+00408470 2 C1,C2,C3,C5  # mov ax, bx
+00408476 2 C1,C2,C3,C5  # mov ax, bx
+0040847B 2 C1,C2,C3,C5  # mov ax, bx
+00408481 2 C1,C2,C3,C5  # mov ax, bx
+00408489 2 C1,C2,C3,C5  # mov ax, bx
+0040848F 2 C1,C2,C3,C5  # mov ax, bx
+00408494 2 C1,C2,C3,C5  # mov ax, bx
+0040849A 2 C1,C2,C3,C5  # mov ax, bx
+004084A2 2 C1,C2,C3,C5  # mov ax, bx
+004084A8 2 C1,C2,C3,C5  # mov ax, bx
+004084AD 2 C1,C2,C3,C5  # mov ax, bx
+004084B3 2 C1,C2,C3,C5  # mov ax, bx
+004084BB 2 C1,C2,C3,C5  # mov ax, bx
+004084C1 2 C1,C2,C3,C5  # mov ax, bx
+004084C6 2 C1,C2,C3,C5  # mov ax, bx
+004084CC 2 C1,C2,C3,C5  # mov ax, bx
+00408700 2 C1,C2,C3,C5  # mov ax, bx
+00408706 2 C1,C2,C3,C5  # mov ax, bx
+0040870B 2 C1,C2,C3,C5  # mov ax, bx
+00408711 2 C1,C2,C3,C5  # mov ax, bx
+00408719 2 C1,C2,C3,C5  # mov ax, bx
+0040871F 2 C1,C2,C3,C5  # mov ax, bx
+00408724 2 C1,C2,C3,C5  # mov ax, bx
+0040872A 2 C1,C2,C3,C5  # mov ax, bx
+00408732 2 C1,C2,C3,C5  # mov ax, bx
+00408738 2 C1,C2,C3,C5  # mov ax, bx
+0040873D 2 C1,C2,C3,C5  # mov ax, bx
+00408743 2 C1,C2,C3,C5  # mov ax, bx
+0040874B 2 C1,C2,C3,C5  # mov ax, bx
+00408751 2 C1,C2,C3,C5  # mov ax, bx
+00408756 2 C1,C2,C3,C5  # mov ax, bx
+0040875C 2 C1,C2,C3,C5  # mov ax, bx
+00408764 2 C1,C2,C3,C5  # mov ax, bx
+0040876A 2 C1,C2,C3,C5  # mov ax, bx
+0040876F 2 C1,C2,C3,C5  # mov ax, bx
+00408775 2 C1,C2,C3,C5  # mov ax, bx
+0040877D 2 C1,C2,C3,C5  # mov ax, bx
+00408783 2 C1,C2,C3,C5  # mov ax, bx
+00408788 2 C1,C2,C3,C5  # mov ax, bx
+0040878E 2 C1,C2,C3,C5  # mov ax, bx
+00408796 2 C1,C2,C3,C5  # mov ax, bx
+0040879C 2 C1,C2,C3,C5  # mov ax, bx
+004087A1 2 C1,C2,C3,C5  # mov ax, bx
+004087A7 2 C1,C2,C3,C5  # mov ax, bx
+004087AF 2 C1,C2,C3,C5  # mov ax, bx
+004087B5 2 C1,C2,C3,C5  # mov ax, bx
+004087BA 2 C1,C2,C3,C5  # mov ax, bx
+004087C0 2 C1,C2,C3,C5  # mov ax, bx
+00408842 2 C1,C2,C3,C5  # mov ax, bx
+00408848 2 C1,C2,C3,C5  # mov ax, bx
+0040884D 2 C1,C2,C3,C5  # mov ax, bx
+00408853 2 C1,C2,C3,C5  # mov ax, bx
+0040885B 2 C1,C2,C3,C5  # mov ax, bx
+00408861 2 C1,C2,C3,C5  # mov ax, bx
+00408866 2 C1,C2,C3,C5  # mov ax, bx
+0040886C 2 C1,C2,C3,C5  # mov ax, bx
+00408874 2 C1,C2,C3,C5  # mov ax, bx
+0040887A 2 C1,C2,C3,C5  # mov ax, bx
+0040887F 2 C1,C2,C3,C5  # mov ax, bx
+00408885 2 C1,C2,C3,C5  # mov ax, bx
+0040888D 2 C1,C2,C3,C5  # mov ax, bx
+00408893 2 C1,C2,C3,C5  # mov ax, bx
+00408898 2 C1,C2,C3,C5  # mov ax, bx
+0040889E 2 C1,C2,C3,C5  # mov ax, bx
+004088A6 2 C1,C2,C3,C5  # mov ax, bx
+004088AC 2 C1,C2,C3,C5  # mov ax, bx
+004088B1 2 C1,C2,C3,C5  # mov ax, bx
+004088B7 2 C1,C2,C3,C5  # mov ax, bx
+004088BF 2 C1,C2,C3,C5  # mov ax, bx
+004088C5 2 C1,C2,C3,C5  # mov ax, bx
+004088CA 2 C1,C2,C3,C5  # mov ax, bx
+004088D0 2 C1,C2,C3,C5  # mov ax, bx
+004088D8 2 C1,C2,C3,C5  # mov ax, bx
+004088DE 2 C1,C2,C3,C5  # mov ax, bx
+004088E3 2 C1,C2,C3,C5  # mov ax, bx
+004088E9 2 C1,C2,C3,C5  # mov ax, bx
+004088F1 2 C1,C2,C3,C5  # mov ax, bx
+004088F7 2 C1,C2,C3,C5  # mov ax, bx
+004088FC 2 C1,C2,C3,C5  # mov ax, bx
+00408902 2 C1,C2,C3,C5  # mov ax, bx
+00408B24 2 C1,C2,C3,C5  # mov ax, bx
+00408B2A 2 C1,C2,C3,C5  # mov ax, bx
+00408B2F 2 C1,C2,C3,C5  # mov ax, bx
+00408B35 2 C1,C2,C3,C5  # mov ax, bx
+00408B3B 2 C1,C2,C3,C5  # mov ax, bx
+00408B41 2 C1,C2,C3,C5  # mov ax, bx
+00408B47 2 C1,C2,C3,C5  # mov ax, bx
+00408B4D 2 C1,C2,C3,C5  # mov ax, bx
+00408B55 2 C1,C2,C3,C5  # mov ax, bx
+00408B5B 2 C1,C2,C3,C5  # mov ax, bx
+00408B60 2 C1,C2,C3,C5  # mov ax, bx
+00408B66 2 C1,C2,C3,C5  # mov ax, bx
+00408B6C 2 C1,C2,C3,C5  # mov ax, bx
+00408B72 2 C1,C2,C3,C5  # mov ax, bx
+00408B78 2 C1,C2,C3,C5  # mov ax, bx
+00408B7E 2 C1,C2,C3,C5  # mov ax, bx
+00408B86 2 C1,C2,C3,C5  # mov ax, bx
+00408B8C 2 C1,C2,C3,C5  # mov ax, bx
+00408B91 2 C1,C2,C3,C5  # mov ax, bx
+00408B97 2 C1,C2,C3,C5  # mov ax, bx
+00408B9D 2 C1,C2,C3,C5  # mov ax, bx
+00408BA3 2 C1,C2,C3,C5  # mov ax, bx
+00408BA9 2 C1,C2,C3,C5  # mov ax, bx
+00408BAF 2 C1,C2,C3,C5  # mov ax, bx
+00408BB7 2 C1,C2,C3,C5  # mov ax, bx
+00408BBD 2 C1,C2,C3,C5  # mov ax, bx
+00408BC2 2 C1,C2,C3,C5  # mov ax, bx
+00408BC8 2 C1,C2,C3,C5  # mov ax, bx
+00408BCE 2 C1,C2,C3,C5  # mov ax, bx
+00408BD4 2 C1,C2,C3,C5  # mov ax, bx
+00408BDA 2 C1,C2,C3,C5  # mov ax, bx
+00408BE0 2 C1,C2,C3,C5  # mov ax, bx
+00408C59 2 C1,C2,C3,C5  # mov ax, bx
+00408C5F 2 C1,C2,C3,C5  # mov ax, bx
+00408C64 2 C1,C2,C3,C5  # mov ax, bx
+00408C6A 2 C1,C2,C3,C5  # mov ax, bx
+00408C70 2 C1,C2,C3,C5  # mov ax, bx
+00408C76 2 C1,C2,C3,C5  # mov ax, bx
+00408C7C 2 C1,C2,C3,C5  # mov ax, bx
+00408C82 2 C1,C2,C3,C5  # mov ax, bx
+00408C8A 2 C1,C2,C3,C5  # mov ax, bx
+00408C90 2 C1,C2,C3,C5  # mov ax, bx
+00408C95 2 C1,C2,C3,C5  # mov ax, bx
+00408C9B 2 C1,C2,C3,C5  # mov ax, bx
+00408CA1 2 C1,C2,C3,C5  # mov ax, bx
+00408CA7 2 C1,C2,C3,C5  # mov ax, bx
+00408CAD 2 C1,C2,C3,C5  # mov ax, bx
+00408CB3 2 C1,C2,C3,C5  # mov ax, bx
+00408CBB 2 C1,C2,C3,C5  # mov ax, bx
+00408CC1 2 C1,C2,C3,C5  # mov ax, bx
+00408CC6 2 C1,C2,C3,C5  # mov ax, bx
+00408CCC 2 C1,C2,C3,C5  # mov ax, bx
+00408CD2 2 C1,C2,C3,C5  # mov ax, bx
+00408CD8 2 C1,C2,C3,C5  # mov ax, bx
+00408CDE 2 C1,C2,C3,C5  # mov ax, bx
+00408CE4 2 C1,C2,C3,C5  # mov ax, bx
+00408CEC 2 C1,C2,C3,C5  # mov ax, bx
+00408CF2 2 C1,C2,C3,C5  # mov ax, bx
+00408CF7 2 C1,C2,C3,C5  # mov ax, bx
+00408CFD 2 C1,C2,C3,C5  # mov ax, bx
+00408D03 2 C1,C2,C3,C5  # mov ax, bx
+00408D09 2 C1,C2,C3,C5  # mov ax, bx
+00408D0F 2 C1,C2,C3,C5  # mov ax, bx
+00408D15 2 C1,C2,C3,C5  # mov ax, bx

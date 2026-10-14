@@ -1,0 +1,107 @@
+# kingpin-recomp
+
+A static recompilation of **Kingpin: Life of Crime** (Xatrix, 1999) for **macOS, iOS/iPadOS
+and Android** on arm64.
+
+The game's original Windows x86 executables are translated to C++ by a recompiler
+(`tools/x86recomp.py`) and run on a Win32 compatibility layer written for this project. No
+third-party engine or source port is used: what runs is the original game code.
+
+> **No game files are included.** You need your own copy of Kingpin: Life of Crime (the CD,
+> as a BIN/CUE rip). The recompiled code is generated on your machine from your copy and must
+> not be redistributed. This project is not affiliated with or endorsed by Interplay, Xatrix
+> or the rights holders.
+
+## Features
+
+- Native resolution, widescreen (Hor+ field of view, HUD kept at 4:3), anisotropic filtering,
+  4x MSAA, ambient occlusion, bloom, sharpening and a brightness control
+- Up to 120 fps with display-synchronised frame pacing
+- Game controllers (Xbox, PlayStation, Switch Pro, MFi; Android gamepads)
+- Touch controls on phones and tablets
+- The intro movie (the original MVE player, recompiled) and CD music from the disc's audio tracks
+- Optional AI-upscaled textures, generated locally from your game files
+
+## Requirements
+
+- A Kingpin: Life of Crime CD rip as BIN/CUE (data track + audio tracks), e.g.
+  `Kingpin - Life of Crime (USA).cue` with its `.bin` files
+- macOS on Apple silicon, Xcode command line tools, CMake, Ninja, Python 3,
+  [unshield](https://github.com/twogood/unshield) (`brew install cmake ninja unshield`)
+- iOS: Xcode and an Apple developer account (a free one works)
+- Android: the Android SDK with NDK 27+, build-tools and platform 34+, Java 17
+
+## Setup
+
+```sh
+# 1. Python tools
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+
+# 2. Install the game from your disc: creates track1.iso, cd/ and game/ (all git-ignored)
+tools/install_game.sh "/path/to/Kingpin - Life of Crime (USA).cue"
+
+# 3. Generate the recompiled code from your copy (gen/ and gen_intro/, git-ignored)
+.venv/bin/python tools/x86recomp.py gen game/kingpin.exe game/ref_gl.dll game/main/gamex86.dll \
+    --seeds tools/seeds.txt --overrides tools/overrides.txt
+.venv/bin/python tools/x86recomp.py gen_intro game/kpintro.exe --smc tools/kpintro_smc.txt
+```
+
+## macOS
+
+```sh
+cmake -S . -B build -G Ninja && ninja -C build
+./run.sh                     # or ./run.sh +map sr1
+```
+
+Cmd+Enter toggles fullscreen, Cmd+= / Cmd+- change the brightness, Cmd+P toggles the
+post-processing effects. `KP_WINDOWED=1` starts in a window, `KP_NO_INTRO=1` skips the intro.
+
+## iOS / iPadOS
+
+```sh
+ios/build.sh sim       # simulator (slow: the simulator renders OpenGL ES on the CPU)
+ios/build.sh device    # a signed device build; see the provisioning steps at the top of ios/build.sh
+xcrun devicectl device install app --device <device id> build-ios-device/out/Kingpin.app
+```
+
+Then copy `kingpin.exe`, `ref_gl.dll`, `kpintro.exe`, `main/` (from `game/`), `track1.iso`
+and the `cd/` folder into the app's Documents folder (Files app, or `xcrun devicectl device
+copy to --domain-type appDataContainer --domain-identifier <bundle id>`).
+
+## Android
+
+```sh
+android/build.sh                                         # build-android/Kingpin.apk (no Gradle)
+adb install -r build-android/Kingpin.apk
+android/push_data.sh game track1.iso "/path/to/Kingpin - Life of Crime (USA).cue"
+```
+
+The bundle/package id is `com.blounty.kingpin`; change it in `ios/`, `android/` and
+`android/java/...` if you publish your own builds.
+
+## Controls
+
+**Controller:** left stick move, right stick look, A jump, B crouch (or close a note /
+notebook / inventory), X use/talk, Y reload, LB/RB previous/next weapon, LT run, RT fire, L3
+flashlight, R3 use item, Back/View holster, D-pad up/down conversation replies, left/right
+select item, Start menu. The layout is in `extras/gamepad.cfg`.
+
+**Touch:** move stick on the left, swipe on the right to look, on-screen buttons for fire,
+jump, crouch, use, reload, weapons and the menu; menus get a D-pad with OK/BACK.
+
+## Optional: HD textures
+
+`tools/upscale_textures.py` upscales the game's textures 4x with Real-ESRGAN into
+`game/main/hd/`. It needs `torch`, `spandrel`, `numpy` and `pillow`, and the
+[RealESRGAN_x4plus](https://github.com/xinntao/Real-ESRGAN/releases) weights in `tools/models/`.
+The results are derived from the game's art: keep them local.
+
+## How it works
+
+See [docs/NOTES.md](docs/NOTES.md): the recompiler, the Win32 layer, the fixed-function OpenGL
+emulation on GL 3.2 / GL ES 3, the platform layers, verification and debugging options.
+
+## License
+
+The code in this repository is MIT licensed (see `LICENSE`). Kingpin: Life of Crime, its
+executables and data belong to their respective owners and are not part of this project.

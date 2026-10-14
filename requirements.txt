@@ -1,0 +1,7 @@
+# Recompiler (tools/x86recomp.py, tools/smc_sites.py)
+capstone==5.0.9
+pefile==2024.8.26
+# Differential tests (tools/x86test.py)
+unicorn==2.1.4
+pyelftools
+# Optional: HD textures (tools/upscale_textures.py) need torch, spandrel, numpy and pillow

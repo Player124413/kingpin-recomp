@@ -1,0 +1,5 @@
+# call target   kind      (kingpin.exe static CRT)
+00445F78 setjmp
+00445EFC longjmp
+# direct calls routed through the dispatcher so runtime hooks see them
+10004320 indirect   # ref_gl GL_LoadPic(name, pic, width, height, type, bits) - HD texture replacement
