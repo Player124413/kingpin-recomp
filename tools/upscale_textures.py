@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Upscales the game's textures 4x with Real-ESRGAN (Apple GPU via PyTorch MPS).
+"""Upscales the game's textures 4x with Real-ESRGAN (GPU via PyTorch: Apple MPS or CUDA).
 
-usage: upscale_textures.py [--only substring] [--force]
+usage: upscale_textures.py [--only substring] [--force]   (or tools/make_hd_textures.sh, which sets it up)
 
 Reads game/main/{textures,models,sprites}/**/*.tga and writes game/main/hd/<same path>.png,
 which the runtime substitutes at upload time (see runtime/win32/gl_textures.cpp). The generated
@@ -101,7 +101,7 @@ def main():
     force = '--force' in sys.argv
     if '--only' in sys.argv:
         only = sys.argv[sys.argv.index('--only') + 1]
-    dev = 'mps' if torch.backends.mps.is_available() else 'cpu'
+    dev = 'mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu'
     model = ModelLoader().load_from_file(MODEL).model.eval().to(dev)
     files = []
     for sub in ('textures', 'models', 'sprites'):

@@ -1,0 +1,5 @@
+# Optional HD textures (tools/make_hd_textures.sh, tools/upscale_textures.py)
+torch==2.14.1
+spandrel==0.4.2
+numpy==2.5.4
+pillow==12.3.0

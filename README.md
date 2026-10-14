@@ -91,10 +91,18 @@ jump, crouch, use, reload, weapons and the menu; menus get a D-pad with OK/BACK.
 
 ## Optional: HD textures
 
-`tools/upscale_textures.py` upscales the game's textures 4x with Real-ESRGAN into
-`game/main/hd/`. It needs `torch`, `spandrel`, `numpy` and `pillow`, and the
-[RealESRGAN_x4plus](https://github.com/xinntao/Real-ESRGAN/releases) weights in `tools/models/`.
-The results are derived from the game's art: keep them local.
+```sh
+tools/make_hd_textures.sh          # all textures (under an hour on an Apple M-series GPU)
+```
+
+This upscales your game's textures 4x with Real-ESRGAN into `game/main/hd/`. It installs
+PyTorch into `.venv`, downloads the
+[RealESRGAN_x4plus](https://github.com/xinntao/Real-ESRGAN) weights (BSD-3-Clause, checked by
+SHA-256), and runs `tools/upscale_textures.py` on Apple silicon (MPS), NVIDIA (CUDA) or the CPU.
+The game picks the HD textures up automatically; on iOS and Android copy them with `main/`.
+
+The HD textures are derived from the game's art, so they are not distributed: everyone
+generates them from their own copy. Keep them out of the repository and don't share them.
 
 ## How it works
 
