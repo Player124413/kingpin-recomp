@@ -4,11 +4,28 @@ from pathlib import Path
 import zipfile
 
 
+def resolve_game_file(path):
+    """Windows disc filenames are case-insensitive; Linux CI filenames are not."""
+    path = Path(path)
+    current = Path('.')
+    for part in path.parts:
+        if not current.is_dir():
+            return path
+        matches = [p for p in current.iterdir() if p.name.casefold() == part.casefold()]
+        if len(matches) > 1:
+            raise ValueError(f'Ambiguous case-insensitive game path: {path}')
+        if not matches:
+            return path
+        current = matches[0]
+    return current
+
+
 def bundle(output):
     required = [Path('game') / p for p in (
         'kingpin.exe', 'ref_gl.dll', 'main/gamex86.dll', 'main/pak0.pak')]
     required.append(Path('track1.iso'))
     for path in required:
+        path = resolve_game_file(path)
         if not path.is_file() or not path.stat().st_size:
             raise ValueError(f'Missing or empty required game file: {path}')
     output.parent.mkdir(parents=True, exist_ok=True)

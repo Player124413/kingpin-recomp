@@ -67,10 +67,27 @@ public class LauncherActivity extends Activity {
         if (!ready() && hasBundle()) installBundle();
     }
 
+    private static File resolveIgnoringCase(File dir, String path) {
+        File current = dir;
+        for (String part : path.split("/")) {
+            File[] children = current.listFiles();
+            if (children == null) return null;
+            File match = null;
+            for (File child : children) {
+                if (child.getName().equalsIgnoreCase(part)) {
+                    if (match != null) return null; // ambiguous names on case-sensitive storage
+                    match = child;
+                }
+            }
+            if (match == null) return null;
+            current = match;
+        }
+        return current;
+    }
     private boolean valid(File dir) {
         for (String path : REQUIRED) {
-            File f = new File(dir, path);
-            if (!f.isFile() || f.length() == 0) return false;
+            File f = resolveIgnoringCase(dir, path);
+            if (f == null || !f.isFile() || f.length() == 0) return false;
         }
         return true;
     }
