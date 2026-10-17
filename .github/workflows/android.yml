@@ -38,7 +38,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y unshield ninja-build cmake
           sdkmanager 'platforms;android-34' 'build-tools;34.0.0' 'ndk;27.2.12479018'
-          python -m pip install -r requirements.txt gdown==5.2.0
+          python -m pip install -r requirements.txt gdown==5.2.0 etcpak==0.9.15 pillow==13.0.0 texture2ddecoder==1.0.6
+      - name: Test packaging and ETC2 codec
+        run: python -m unittest discover -s tests
       - name: Download and extract your disc
         env:
           GAME_ARCHIVE_URL: ${{ inputs.game_archive_url || secrets.GAME_ARCHIVE_URL }}
@@ -48,6 +50,8 @@ jobs:
         run: |
           cue=$(find disc -type f -iname '*.cue' -print -quit)
           tools/install_game.sh "$cue"
+      - name: Prepare ETC2 textures
+        run: python tools/make_etc2.py
       - name: Recompile original binaries
         run: |
           python tools/x86recomp.py gen game/kingpin.exe game/ref_gl.dll game/main/gamex86.dll --seeds tools/seeds.txt --overrides tools/overrides.txt

@@ -7,6 +7,8 @@
 // kp_env.txt there sets KP_* options (KEY=VALUE per line; ARGS=... adds game arguments).
 #include <EGL/egl.h>
 #include <aaudio/AAudio.h>
+#include <jni.h>
+#include <chrono>
 #include <android/bitmap.h>
 #include <android/imagedecoder.h>
 #include <android/log.h>
@@ -35,6 +37,7 @@ void glBlitRgba(const uint32_t* pixels, int w, int h, int viewW, int viewH); // 
 
 namespace
 {
+    std::atomic<int> g_presentFps{0};
     android_app* g_app;
 
     // The native window comes and goes with the activity (backgrounding). The guest thread owns
@@ -60,7 +63,10 @@ namespace
     // Window size scaled by KP_RENDER_SCALE: the buffers the game renders at.
     void windowRenderSize(ANativeWindow* w, int& rw, int& rh)
     {
-        const float k = renderScale();
+        float k = renderScale();
+        // Bound fill-rate cost on high-DPI phones; explicit KP_RENDER_SCALE opts out.
+        if (!getenv("KP_RENDER_SCALE"))
+            k = std::min(1.0f, 720.0f / std::max(1, std::min(ANativeWindow_getWidth(w), ANativeWindow_getHeight(w))));
         rw = (int)(ANativeWindow_getWidth(w) * k) & ~1;
         rh = (int)(ANativeWindow_getHeight(w) * k) & ~1;
     }
@@ -84,8 +90,8 @@ namespace
         int rw, rh;
         windowRenderSize(g_window, rw, rh);
         ANativeWindow_setBuffersGeometry(g_window, rw, rh, 0);
-        // Up to 120 Hz on high refresh rate screens (the game's frame cap is 125; KP_HZ overrides).
-        const float hz = getenv("KP_HZ") ? (float)atof(getenv("KP_HZ")) : 120.0f;
+        // Request 60 Hz for the mobile performance target; KP_HZ overrides.
+        const float hz = getenv("KP_HZ") ? (float)atof(getenv("KP_HZ")) : 60.0f;
         ANativeWindow_setFrameRate(g_window, hz, ANATIVEWINDOW_FRAME_RATE_COMPATIBILITY_FIXED_SOURCE);
         g_surface = eglCreateWindowSurface(g_display, g_config, g_window, nullptr);
         g_surfaceReleased = false;
@@ -312,6 +318,12 @@ namespace
             }
             closedir(d);
         }
+        // Mobile defaults, not a promise of 60 FPS. kp_env.txt overrides these.
+        setenv("KP_MSAA", "0", 0);
+        setenv("KP_POST", "0", 0);
+        setenv("KP_ANISO", "2", 0);
+        setenv("KP_HD_TEXTURES", "0", 0);
+        cfg.args = {"+set", "cl_maxfps", "60"};
         loadEnvFile(cfg.args);
         if (access((g_dataDir + "/kingpin.exe").c_str(), R_OK) != 0)
         {
@@ -408,7 +420,17 @@ namespace platform
 
     void glPresent()
     {
-        eglSwapBuffers(g_display, g_surface);
+        if (eglSwapBuffers(g_display, g_surface)) {
+            static auto start = std::chrono::steady_clock::now();
+            static int frames = 0;
+            ++frames;
+            const auto now = std::chrono::steady_clock::now();
+            const double seconds = std::chrono::duration<double>(now - start).count();
+            if (seconds >= 0.5) {
+                g_presentFps.store((int)std::lround(frames / seconds), std::memory_order_relaxed);
+                frames = 0; start = now;
+            }
+        }
         ensureSurface(); // follows window changes (and waits while the app is in the background)
     }
 
@@ -545,4 +567,11 @@ void android_main(android_app* app)
                 hostExit(0);
         }
     }
+}
+
+// UI polls a cached present rate, never synchronizes with or stalls the GL thread.
+extern "C" JNIEXPORT jint JNICALL
+Java_com_blounty_kingpin_KingpinActivity_nativeGetFps(JNIEnv*, jclass)
+{
+    return g_presentFps.load(std::memory_order_relaxed);
 }

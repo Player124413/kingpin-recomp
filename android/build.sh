@@ -23,6 +23,7 @@ $NDK/toolchains/llvm/prebuilt/$NDK_HOST/bin/llvm-strip --strip-debug -o $build/a
 rm -rf "$build/assets"
 mkdir -p "$build/assets"
 cp extras/port.cfg extras/gamepad.cfg "$build/assets/"
+printf '\n// Android performance target\nset cl_maxfps "60"\n' >> "$build/assets/port.cfg"
 if [ "${KP_BUNDLE_DATA:-0}" = "1" ]; then
   python3 tools/bundle_android_data.py
 fi

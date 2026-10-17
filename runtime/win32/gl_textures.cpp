@@ -10,6 +10,8 @@
 #include <algorithm>
 #include <cmath>
 #include <deque>
+#include <fstream>
+#include <cstring>
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -204,6 +206,46 @@ void glTexturesBeginImage(const char* name, uint32_t pic, int w, int h, int type
 }
 void glTexturesEndImage() { t_img.active = false; }
 
+#if defined(__ANDROID__)
+std::string etc2TexturePath(const std::string& name);
+static bool uploadEtc2()
+{
+    if (getenv("KP_ETC2") && atoi(getenv("KP_ETC2")) == 0) return false;
+    std::ifstream file(etc2TexturePath(t_img.name), std::ios::binary);
+    auto word = [&]() -> uint32_t {
+        unsigned char b[4] = {};
+        file.read((char*)b, 4);
+        return uint32_t(b[0]) | uint32_t(b[1]) << 8 | uint32_t(b[2]) << 16 | uint32_t(b[3]) << 24;
+    };
+    if (word() != 0x3245504b) return false; // KPE2, little endian
+    const uint32_t w = word(), h = word(), levels = word();
+    if (!file || !w || !h || w > 4096 || h > 4096 || w != (uint32_t)t_img.w || h != (uint32_t)t_img.h) return false;
+    uint32_t expected = 1;
+    for (uint32_t n = std::max(w,h); n > 1; n >>= 1) ++expected;
+    if (levels != expected) return false;
+    std::vector<std::vector<uint8_t>> mips;
+    uint32_t mw = w, mh = h;
+    for (uint32_t level = 0; level < levels; ++level) {
+        const uint32_t size = word();
+        if (!file || size != ((mw+3)/4)*((mh+3)/4)*16) return false;
+        mips.emplace_back(size);
+        file.read((char*)mips.back().data(), size);
+        if (!file) return false;
+        mw = std::max(1u, mw/2); mh = std::max(1u, mh/2);
+    }
+    emu::flush();
+    mw = w; mh = h;
+    for (uint32_t level = 0; level < levels; ++level) {
+        ::glCompressedTexImage2D(GL_TEXTURE_2D, level, GL_COMPRESSED_RGBA8_ETC2_EAC,
+            mw, mh, 0, (GLsizei)mips[level].size(), mips[level].data());
+        mw = std::max(1u, mw/2); mh = std::max(1u, mh/2);
+    }
+    ::glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, levels-1);
+    t_img.replaced = true;
+    return true;
+}
+#endif
+
 // Returns true when the upload was replaced (or skipped as a game mip level of a replaced image).
 static bool replaceUpload(GLenum target, GLint level, GLint internal, GLsizei w, GLsizei h, GLenum format, GLenum type,
                           const uint8_t* data)
@@ -212,6 +254,10 @@ static bool replaceUpload(GLenum target, GLint level, GLint internal, GLsizei w,
         return false;
     if (level > 0)
         return t_img.replaced;
+#if defined(__ANDROID__)
+    // GLES 3 guarantees ETC2/EAC. Static named images only; lightmaps stay writable RGBA.
+    if (uploadEtc2()) return true;
+#endif
     static const bool enabled = !getenv("KP_HD_TEXTURES") || atoi(getenv("KP_HD_TEXTURES")) != 0;
     std::vector<uint8_t> hd;
     int hw, hh;

@@ -9,6 +9,7 @@
 //    bottom). Disable with KP_NO_HORPLUS=1.
 #include <algorithm>
 #include <cmath>
+#include <cctype>
 #include <string>
 #include <vector>
 
@@ -139,6 +140,17 @@ namespace
         g_loadPic(c);
         glTexturesEndImage();
     }
+}
+
+std::string etc2TexturePath(const std::string& name)
+{
+    if (name.empty() || name[0] == '/' || name.find("..") != std::string::npos || name.find('\\') != std::string::npos)
+        return {};
+    std::string n = name;
+    std::transform(n.begin(), n.end(), n.begin(), [](unsigned char c) { return (char)std::tolower(c); });
+    const size_t dot = n.find_last_of('.');
+    if (dot != std::string::npos) n.resize(dot);
+    return g_gameDir + "/main/etc2/" + n + ".etc2";
 }
 
 bool loadHdTexture(const char* name, std::vector<uint8_t>& rgba, int& w, int& h)

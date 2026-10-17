@@ -193,3 +193,36 @@ installation and recompilation. This creates a temporary `game-data.zip` under
 `build-android/assets/` (git-ignored) and embeds it in the APK. Interrupted first-run
 extraction can be retried by closing and reopening the app. Full APK assembly and
 on-device extraction require testing with your own disc files.
+
+### Android performance profile, ETC2 and FPS
+
+Android now defaults to a **60 FPS target** and requests a 60 Hz display mode.
+Render buffers are capped to a 720-pixel short edge (never upscaled). MSAA and
+AO/bloom/sharpen effects are disabled, anisotropy is reduced to 2x, and HD PNG
+replacements are disabled by default. These reduce GPU load, not CPU emulation
+cost. They do **not** guarantee 60 FPS on all phones or in every scene. Thermal
+throttling, device drivers and CPU performance still matter. No device benchmark
+has been performed for this profile.
+
+An on-screen FPS label in the upper-right updates twice a second from successful
+native buffer presents, not the UI refresh rate. It measures presentation rate,
+not GPU timing or simulation speed.
+
+CI encodes static TGA world/model/sprite/sky textures from PAKs and loose files
+into ETC2 RGBA8/EAC mip chains under `main/etc2/`. These ship in the separate
+**Kingpin-Game-Data** artifact: import the new data folder to use them. Android
+GLES 3 guarantees ETC2 support. Lightmaps, UI, video and unsupported source formats
+remain uncompressed. Missing/invalid ETC2 cache entries fall back to the original
+upload. Originals remain in the PAKs, so this reduces texture GPU memory/bandwidth,
+not the size of the game-data download. Compression is lossy and uses original
+texture colours rather than the guest's gamma/intensity lookup; brightness may
+differ from the uncompressed path. Disable with `KP_ETC2=0` if needed.
+
+For local preparation: `pip install etcpak==0.9.15 pillow==13.0.0`, then
+`python tools/make_etc2.py` after installing your disc. Optional codec tests also
+use `texture2ddecoder`. No game textures or generated caches are committed.
+
+Advanced overrides in the active game folder's `kp_env.txt` include
+`KP_RENDER_SCALE=0.5`, `KP_MSAA=0`, `KP_POST=0`, `KP_ANISO=2`,
+`KP_HD_TEXTURES=0`, `KP_ETC2=0` and `KP_HZ=60`. Explicit render scale overrides the
+720p cap. Adjust `cl_maxfps` in the game's config for a different simulation cap.
