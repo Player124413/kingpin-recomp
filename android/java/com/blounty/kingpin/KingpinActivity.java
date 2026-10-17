@@ -17,12 +17,21 @@ import android.view.WindowInsetsController;
 import android.view.WindowManager;
 
 public class KingpinActivity extends NativeActivity {
+    // NativeActivity uses dlopen internally, which does not register the library with
+    // this Java ClassLoader. The FPS JNI method needs a Java-visible load as well.
+    static { System.loadLibrary("kingpin"); }
     private static native int nativeGetFps();
     private final Handler fpsHandler = new Handler(Looper.getMainLooper());
     private TextView fpsLabel;
     private final Runnable fpsTick = new Runnable() {
         @Override public void run() {
-            fpsLabel.setText(nativeGetFps() + " FPS");
+            try {
+                fpsLabel.setText(nativeGetFps() + " FPS");
+            } catch (UnsatisfiedLinkError error) {
+                android.util.Log.e("Kingpin", "FPS JNI method unavailable", error);
+                fpsLabel.setText("FPS недоступен");
+                return; // an optional counter must never terminate the game
+            }
             fpsHandler.postDelayed(this, 500);
         }
     };
