@@ -146,3 +146,35 @@ recompiled source files are uploaded as artifacts. The APK itself contains
 translated game code; keep it for personal use, do not publish it as a release.
 Each clean CI run creates a new debug signing key, so upgrading an earlier APK
 may require uninstalling it first (back up saves/data before uninstalling).
+
+### Android launcher and folder import
+
+The app now opens a launcher with **Choose game folder** and **Play** buttons
+(localized in Russian). Select a folder using Android's system document picker;
+no all-files storage permission is needed. Select the folder directly containing:
+
+```text
+kingpin.exe
+ref_gl.dll
+track1.iso
+main/              # complete installed folder, including gamex86.dll and pak0.pak
+kpintro.exe        # optional intro player
+cd/                # optional CUE and audio BIN tracks for music
+```
+
+This is an **installed-data importer**, not a BIN/CUE installer or ZIP extractor.
+Prepare the disc with `tools/install_game.sh` first; assemble the files listed
+above in one folder, then put that folder somewhere the Android picker can access
+(e.g. a subfolder of Downloads). The current CI artifact still contains only the
+APK, not these prepared assets.
+
+Import runs off the UI thread, copies the entire `main/` and optional `cd/`, adds
+the port/controller settings, validates required nonempty files, then publishes
+an `imported-game/` directory inside the app's external files directory. Original
+source files are not modified. Failed copies leave the current imported game
+untouched; temporary copies need additional free space. Import again replaces
+the previous imported game **including saves**, so back up saves first. Do not
+re-import while a game session is running. Android may interrupt imports if you
+close the app; reopen and retry. Legacy data copied directly with `push_data.sh`
+is still used when no imported game exists. Uninstalling the app removes imported
+data and saves.

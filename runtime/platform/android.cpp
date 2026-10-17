@@ -527,6 +527,9 @@ void android_main(android_app* app)
     app->onAppCmd = onCmd;
     app->onInputEvent = onInput;
     g_dataDir = app->activity->externalDataPath ? app->activity->externalDataPath : app->activity->internalDataPath;
+    // The launcher stages a complete import before publishing this directory.
+    if (access((g_dataDir + "/imported-game/kingpin.exe").c_str(), R_OK) == 0)
+        g_dataDir += "/imported-game";
     logf("[main] data directory %s", g_dataDir.c_str());
     while (true)
     {
