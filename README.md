@@ -113,3 +113,33 @@ emulation on GL 3.2 / GL ES 3, the platform layers, verification and debugging o
 
 The code in this repository is MIT licensed (see `LICENSE`). Kingpin: Life of Crime, its
 executables and data belong to their respective owners and are not part of this project.
+
+### Android APK via GitHub Actions
+
+The manual **Build Android APK** workflow builds on Ubuntu (no local Android SDK
+needed). Use only a disc you own. The ZIP must contain exactly one `.cue` and all
+of its `.bin` files, with their original names and relative paths preserved. A
+single enclosing folder is fine. Installed-game ZIPs without BIN/CUE are not supported.
+
+1. Upload the ZIP to Google Drive (allow downloads for anyone with the link), or
+   preferably a **private Hugging Face dataset**. Do not publish copyrighted game files.
+2. In your GitHub repository, open **Settings → Secrets and variables → Actions**
+   and add `GAME_ARCHIVE_URL` as a repository secret:
+   - Google Drive: `https://drive.google.com/file/d/FILE_ID/view`
+   - Hugging Face: `https://huggingface.co/datasets/USER/DATASET/resolve/main/disc.zip`
+     (use `resolve`, not `blob`). For a private dataset, also add the `HF_TOKEN`
+     secret with read access to that dataset.
+3. Open **Actions → Build Android APK → Run workflow** and select the branch
+   containing the workflow. GitHub may require the workflow to be present on the
+   default branch before showing the manual-run button.
+4. When it succeeds, download the **Kingpin-Android-arm64** artifact and extract
+   `Kingpin.apk`. Artifacts expire after 3 days. Drive download quotas can cause
+   failures; use Hugging Face if that happens.
+
+The APK targets arm64 devices running Android 11 or newer and includes touch
+controls. It does **not** bundle the game data: install it and copy your data
+using `android/push_data.sh` as above. No extracted game assets, disc images or
+recompiled source files are uploaded as artifacts. The APK itself contains
+translated game code; keep it for personal use, do not publish it as a release.
+Each clean CI run creates a new debug signing key, so upgrading an earlier APK
+may require uninstalling it first (back up saves/data before uninstalling).

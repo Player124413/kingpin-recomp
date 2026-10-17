@@ -9,12 +9,17 @@ SDK=${ANDROID_HOME:-$HOME/Library/Android/sdk}
 NDK=$SDK/ndk/$(ls $SDK/ndk | sort -V | tail -1)
 BT=$SDK/build-tools/$(ls $SDK/build-tools | sort -V | tail -1)
 PLATFORM=$SDK/platforms/$(ls $SDK/platforms | sort -V | tail -1)
+case "$(uname -s)" in
+  Darwin) NDK_HOST=darwin-x86_64 ;;
+  Linux) NDK_HOST=linux-x86_64 ;;
+  *) echo "Unsupported build host" >&2; exit 1 ;;
+esac
 build=build-android
 cmake -S . -B $build -G Ninja -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
   -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=android-30 -DCMAKE_BUILD_TYPE=RelWithDebInfo >/dev/null
-ninja -C $build kingpin
+cmake --build "$build" --target kingpin
 rm -rf $build/apk && mkdir -p $build/apk/lib/arm64-v8a
-$NDK/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-strip --strip-debug -o $build/apk/lib/arm64-v8a/libkingpin.so $build/libkingpin.so
+$NDK/toolchains/llvm/prebuilt/$NDK_HOST/bin/llvm-strip --strip-debug -o $build/apk/lib/arm64-v8a/libkingpin.so $build/libkingpin.so
 $BT/aapt2 link -o $build/unaligned.apk --manifest android/AndroidManifest.xml -I $PLATFORM/android.jar
 # The activity class (immersive full screen) -> classes.dex
 rm -rf $build/java && mkdir -p $build/java

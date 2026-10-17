@@ -1,0 +1,59 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  apk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      CMAKE_BUILD_PARALLEL_LEVEL: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unshield ninja-build cmake
+          sdkmanager 'platforms;android-34' 'build-tools;34.0.0' 'ndk;27.2.12479018'
+          python -m pip install -r requirements.txt gdown==5.2.0
+      - name: Download and extract your disc
+        env:
+          GAME_ARCHIVE_URL: ${{ secrets.GAME_ARCHIVE_URL }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python tools/ci_disc.py
+      - name: Install game from disc
+        run: |
+          cue=$(find disc -type f -iname '*.cue' -print -quit)
+          tools/install_game.sh "$cue"
+      - name: Recompile original binaries
+        run: |
+          python tools/x86recomp.py gen game/kingpin.exe game/ref_gl.dll game/main/gamex86.dll --seeds tools/seeds.txt --overrides tools/overrides.txt
+          python tools/x86recomp.py gen_intro game/kpintro.exe --smc tools/kpintro_smc.txt
+      - name: Build and verify APK
+        run: |
+          android/build.sh
+          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify build-android/Kingpin.apk
+      # No discs, extracted assets or generated sources are uploaded.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Kingpin-Android-arm64
+          path: build-android/Kingpin.apk
+          if-no-files-found: error
+          retention-days: 3
+      - name: Remove game material
+        if: always()
+        run: rm -rf disc game cd gen gen_intro track1.iso
