@@ -34,6 +34,13 @@ class BundleTest(unittest.TestCase):
             self.assertIn('main/Pak0.pak', archive.namelist())
             self.assertIsNone(archive.testzip())
 
+    def test_separate_data_export(self):
+        output = Path('build/game-data')
+        bundle.export_directory(output)
+        self.assertEqual((output / 'main/Pak0.pak').read_bytes(), b'fixture')
+        self.assertTrue((output / 'track1.iso').is_file())
+        self.assertFalse(list(output.rglob('*.zip')))
+
     def test_missing_pak(self):
         Path('game/main/Pak0.pak').unlink()
         with self.assertRaisesRegex(ValueError, 'Missing or empty'):

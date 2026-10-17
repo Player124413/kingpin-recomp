@@ -20,7 +20,7 @@ def resolve_game_file(path):
     return current
 
 
-def bundle(output):
+def bundle(output, compression=zipfile.ZIP_DEFLATED):
     required = [Path('game') / p for p in (
         'kingpin.exe', 'ref_gl.dll', 'main/gamex86.dll', 'main/pak0.pak')]
     required.append(Path('track1.iso'))
@@ -29,7 +29,7 @@ def bundle(output):
         if not path.is_file() or not path.stat().st_size:
             raise ValueError(f'Missing or empty required game file: {path}')
     output.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=1) as z:
+    with zipfile.ZipFile(output, 'w', compression=compression) as z:
         for name in ('kingpin.exe', 'ref_gl.dll', 'kpintro.exe'):
             path = Path('game') / name
             if path.is_file():
@@ -53,5 +53,25 @@ def bundle(output):
     print('Bundled game data:', output.stat().st_size, 'bytes')
 
 
+def export_directory(output):
+    """Stage files directly so Actions creates one ZIP, not a ZIP inside a ZIP."""
+    import tempfile
+    if output.exists():
+        raise ValueError(f'Export destination already exists: {output}')
+    with tempfile.TemporaryDirectory() as tmp:
+        archive = Path(tmp) / 'game-data.zip'
+        bundle(archive, compression=zipfile.ZIP_STORED)
+        # This archive is generated above from our own validated paths.
+        with zipfile.ZipFile(archive) as z:
+            z.extractall(output)
+
+
 if __name__ == '__main__':
-    bundle(Path('build-android/assets/game-data.zip'))
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--export-directory', type=Path)
+    args = parser.parse_args()
+    if args.export_directory:
+        export_directory(args.export_directory)
+    else:
+        bundle(Path('build-android/assets/game-data.zip'))

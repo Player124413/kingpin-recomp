@@ -140,16 +140,19 @@ single enclosing folder is fine. Installed-game ZIPs without BIN/CUE are not sup
    failures; use Hugging Face if that happens.
 
 The APK targets arm64 devices running Android 11 or newer and includes touch
-controls. **bundle_game_data** is enabled by default in the Run workflow form:
-the APK includes your installed data, disc ISO and CD audio. The launcher extracts
-them automatically on first launch, without selecting a folder or downloading
-anything. Allow space for both the APK and its extracted game data (potentially
-several GB). Existing valid imported data/saves are not replaced on app updates.
+controls. CI now produces **two separate artifacts**:
 
-Disable **bundle_game_data** for a smaller APK requiring folder import or
-`android/push_data.sh`. Only the APK is uploaded, never separate extracted files
-or generated sources. A bundled APK contains copyrighted game assets as well as
-translated code: keep it for personal use, do not publish it as a release.
+- **Kingpin-Android-arm64** — contains `Kingpin.apk`, without embedded game data.
+- **Kingpin-Game-Data** — contains the prepared game files directly (no nested ZIP).
+
+Download both artifacts. Install the APK. Extract the game-data artifact into a
+normal folder, e.g. `Download/KingpinData/`. In the launcher tap **Выбрать папку
+игры**, select that folder (the one directly containing `kingpin.exe`, `main/`
+and `track1.iso`), wait for copying, then tap **Играть**. No ZIP extraction runs
+inside the app. Both artifacts expire after 3 days.
+
+These artifacts contain copyrighted game material/code: keep them for personal
+use, do not publish them as releases. No generated source code is uploaded.
 Each clean CI run creates a new debug signing key, so upgrading an earlier APK
 may require uninstalling it first (back up saves/data before uninstalling).
 
@@ -169,10 +172,10 @@ cd/                # optional CUE and audio BIN tracks for music
 ```
 
 This is an **installed-data importer**, not a BIN/CUE installer or ZIP extractor.
-Prepare the disc with `tools/install_game.sh` first; assemble the files listed
-above in one folder, then put that folder somewhere the Android picker can access
-(e.g. a subfolder of Downloads). For an unbundled APK you must provide these files yourself; the default bundled
-CI build installs them automatically.
+CI prepares these files for you in **Kingpin-Game-Data**. Alternatively, prepare
+the disc locally with `tools/install_game.sh` and assemble the files above in one
+folder. Put it somewhere the Android picker can access (e.g. a subfolder of
+Downloads).
 
 Import runs off the UI thread, copies the entire `main/` and optional `cd/`, adds
 the port/controller settings, validates required nonempty files, then publishes

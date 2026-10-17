@@ -8,11 +8,6 @@ on:
         required: false
         type: string
         default: ''
-      bundle_game_data:
-        description: 'Include your game data in APK (personal use only; large download)'
-        required: true
-        type: boolean
-        default: true
 
 permissions:
   contents: read
@@ -59,17 +54,26 @@ jobs:
           python tools/x86recomp.py gen_intro game/kpintro.exe --smc tools/kpintro_smc.txt
       - name: Build and verify APK
         env:
-          KP_BUNDLE_DATA: ${{ inputs.bundle_game_data && '1' || '0' }}
+          KP_BUNDLE_DATA: '0'
         run: |
           android/build.sh
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify build-android/Kingpin.apk
-      # Only the APK is uploaded; it includes game assets when bundle_game_data is enabled.
+      - name: Prepare separate game data folder
+        run: python tools/bundle_android_data.py --export-directory build-android/game-data
+      # These artifacts contain copyrighted material: personal use only, no public releases.
       - uses: actions/upload-artifact@v4
         with:
           name: Kingpin-Android-arm64
           path: build-android/Kingpin.apk
           if-no-files-found: error
           retention-days: 3
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Kingpin-Game-Data
+          path: build-android/game-data/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
       - name: Remove game material
         if: always()
-        run: rm -rf disc game cd gen gen_intro track1.iso
+        run: rm -rf disc game cd gen gen_intro track1.iso build-android/game-data
