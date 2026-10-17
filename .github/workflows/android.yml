@@ -33,6 +33,18 @@ jobs:
         with:
           # The action defaults to "tools platform-tools", but "tools" was removed.
           packages: platform-tools
+      - name: Restore persistent APK signing key
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$ANDROID_KEYSTORE_BASE64" ]; then
+            echo 'Missing ANDROID_KEYSTORE_BASE64. Run Create Android signing key once, then save its file contents as that repository secret. See README.'
+            exit 1
+          fi
+          mkdir -p "$HOME/.android"
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$HOME/.android/debug.keystore"
+          chmod 600 "$HOME/.android/debug.keystore"
+          keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey > /dev/null
       - name: Install build tools
         run: |
           sudo apt-get update
@@ -80,4 +92,6 @@ jobs:
           compression-level: 0
       - name: Remove game material
         if: always()
-        run: rm -rf disc game cd gen gen_intro track1.iso build-android/game-data
+        run: |
+          rm -rf disc game cd gen gen_intro track1.iso build-android/game-data
+          rm -f "$HOME/.android/debug.keystore"

@@ -1,0 +1,35 @@
+name: Create Android signing key
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  create-key:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Create key for personal APK updates
+        run: |
+          umask 077
+          mkdir -p "$RUNNER_TEMP/kingpin-signing"
+          keytool -genkeypair -keystore "$RUNNER_TEMP/kingpin-signing/debug.keystore" \
+            -storetype JKS -storepass android -keypass android -alias androiddebugkey \
+            -keyalg RSA -keysize 2048 -validity 10000 -dname 'CN=Kingpin Personal Build'
+          base64 -w 0 "$RUNNER_TEMP/kingpin-signing/debug.keystore" > "$RUNNER_TEMP/kingpin-signing/ANDROID_KEYSTORE_BASE64.txt"
+          echo 'Download the artifact and store the entire text file as the ANDROID_KEYSTORE_BASE64 repository Actions secret. Keep a safe backup. Never paste it in chat or publish it. Do not generate a new key for each build.' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PRIVATE-Android-Signing-Key
+          path: ${{ runner.temp }}/kingpin-signing/ANDROID_KEYSTORE_BASE64.txt
+          if-no-files-found: error
+          retention-days: 1
+      - name: Remove temporary signing material
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/kingpin-signing"
