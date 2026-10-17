@@ -30,6 +30,9 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
+        with:
+          # The action defaults to "tools platform-tools", but "tools" was removed.
+          packages: platform-tools
       - name: Install build tools
         run: |
           sudo apt-get update
