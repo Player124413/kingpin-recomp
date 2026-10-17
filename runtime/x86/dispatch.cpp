@@ -3,6 +3,7 @@
 #include <execinfo.h>
 #else
 #include <android/log.h>
+#include <sys/stat.h>
 #endif
 #include <signal.h>
 #include <sys/mman.h>
@@ -42,6 +43,25 @@ namespace
         static std::unordered_map<std::string, uint32_t> m;
         return m;
     }
+#if defined(__ANDROID__)
+    std::mutex g_fileLogMutex;
+    FILE* g_fileLog = nullptr;
+    volatile sig_atomic_t g_crashLogFd = -1;
+    size_t g_fileLogBytes = 0;
+    std::string g_fileLogDir;
+    void rotateFileLog()
+    {
+        g_crashLogFd = -1;
+        if (g_fileLog) fclose(g_fileLog);
+        g_fileLog = nullptr;
+        const std::string current = g_fileLogDir + "/native-current.log";
+        const std::string previous = g_fileLogDir + "/native-previous.log";
+        rename(current.c_str(), previous.c_str());
+        g_fileLog = fopen(current.c_str(), "w");
+        if (g_fileLog) g_crashLogFd = fileno(g_fileLog);
+        g_fileLogBytes = 0;
+    }
+#endif
     const auto g_start = std::chrono::steady_clock::now();
 
     std::string key(const std::string& dll, const std::string& name)
@@ -61,6 +81,19 @@ namespace
     }
 }
 
+#if defined(__ANDROID__)
+// Called before starting the guest, using app-private storage outside imported data.
+void androidFileLogInit(const char* internalPath)
+{
+    if (!internalPath) return;
+    std::lock_guard<std::mutex> lock(g_fileLogMutex);
+    if (g_fileLog) return;
+    g_fileLogDir = std::string(internalPath) + "/logs";
+    mkdir(g_fileLogDir.c_str(), 0700);
+    rotateFileLog();
+}
+#endif
+
 void logf(const char* fmt, ...)
 {
     const double t = std::chrono::duration<double>(std::chrono::steady_clock::now() - g_start).count();
@@ -72,6 +105,15 @@ void logf(const char* fmt, ...)
     fprintf(stderr, "[%8.3f] %s\n", t, buf);
 #if defined(__ANDROID__)
     __android_log_print(ANDROID_LOG_INFO, "kingpin", "[%8.3f] %s", t, buf);
+    std::lock_guard<std::mutex> lock(g_fileLogMutex);
+    if (g_fileLog) {
+        if (g_fileLogBytes >= 1024 * 1024) rotateFileLog();
+        if (g_fileLog) {
+            const int count = fprintf(g_fileLog, "[%8.3f] %s\n", t, buf);
+            if (count > 0) g_fileLogBytes += (size_t)count;
+            fflush(g_fileLog); // retain the last messages even after a native crash
+        }
+    }
 #endif
 }
 
@@ -307,6 +349,11 @@ static void crashHandler(int sig, siginfo_t* info, void*)
     else
         snprintf(buf, sizeof buf, "[x86] FAULT (signal %d) at host address %p\n", sig, info->si_addr);
     write(2, buf, strlen(buf));
+#if defined(__ANDROID__)
+    // Best effort only: no mutex/stdio calls here, since the fault may interrupt logf.
+    const int fd = g_crashLogFd;
+    if (fd >= 0) write(fd, buf, strlen(buf));
+#endif
     void* frames[64];
 #if !defined(__ANDROID__)
     const int n = backtrace(frames, 64);

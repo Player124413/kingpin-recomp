@@ -33,6 +33,8 @@
 #include "app.h"
 #include "platform.h"
 
+void androidFileLogInit(const char* internalPath);
+
 void glBlitRgba(const uint32_t* pixels, int w, int h, int viewW, int viewH); // gl_post.cpp
 
 namespace
@@ -545,6 +547,7 @@ namespace platform
 
 void android_main(android_app* app)
 {
+    androidFileLogInit(app->activity->internalDataPath);
     g_app = app;
     app->onAppCmd = onCmd;
     app->onInputEvent = onInput;

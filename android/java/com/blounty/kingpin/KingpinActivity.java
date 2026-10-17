@@ -28,6 +28,7 @@ public class KingpinActivity extends NativeActivity {
             try {
                 fpsLabel.setText(nativeGetFps() + " FPS");
             } catch (UnsatisfiedLinkError error) {
+                Diagnostics.record("FPS JNI method unavailable: " + error);
                 android.util.Log.e("Kingpin", "FPS JNI method unavailable", error);
                 fpsLabel.setText("FPS недоступен");
                 return; // an optional counter must never terminate the game
@@ -43,6 +44,7 @@ public class KingpinActivity extends NativeActivity {
     }
     @Override
     protected void onCreate(Bundle state) {
+        Diagnostics.record("Game activity creating");
         super.onCreate(state);
         fpsLabel = new TextView(this);
         fpsLabel.setText("— FPS"); fpsLabel.setTextSize(14);

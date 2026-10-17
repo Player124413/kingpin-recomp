@@ -226,3 +226,21 @@ Advanced overrides in the active game folder's `kp_env.txt` include
 `KP_RENDER_SCALE=0.5`, `KP_MSAA=0`, `KP_POST=0`, `KP_ANISO=2`,
 `KP_HD_TEXTURES=0`, `KP_ETC2=0` and `KP_HZ=60`. Explicit render scale overrides the
 720p cap. Adjust `cl_maxfps` in the game's config for a different simulation cap.
+
+### Copying Android diagnostics
+
+The launcher has **Показать логи** (view/select text) and **Скопировать логи**
+(copy to clipboard) buttons. After a crash, reopen the launcher and copy logs
+**before launching the game again**, then paste them into a bug report. No ADB,
+storage permissions or network upload is required.
+
+App-private `files/logs/` holds bounded Java logs (including uncaught Java
+exceptions) and flushed native runtime messages (current/previous files, up to
+about 1 MiB each). The report includes recent tails, device/OS/app version and up
+to three Android historical exit records. Android may supply an ANR text trace;
+full native tombstones/stacks are not guaranteed or exposed as text here. Crashes
+before native logging starts may only appear in Java or OS exit records. Logging
+is best-effort, not a substitute for `adb logcat` when a complete stack is needed.
+
+Review copied text before sharing: it may contain device details and file paths.
+Logs survive app/process restarts, but not uninstalling or clearing app storage.

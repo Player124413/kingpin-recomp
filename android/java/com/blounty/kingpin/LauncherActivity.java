@@ -53,6 +53,10 @@ public class LauncherActivity extends Activity {
         choose = new Button(this); choose.setText("Выбрать папку игры"); layout.addView(choose);
         play = new Button(this); play.setText("Играть"); layout.addView(play);
         status = new TextView(this); layout.addView(status);
+        Button showLogs = new Button(this); showLogs.setText("Показать логи"); layout.addView(showLogs);
+        Button copyLogs = new Button(this); copyLogs.setText("Скопировать логи"); layout.addView(copyLogs);
+        showLogs.setOnClickListener(v -> readLogs(false));
+        copyLogs.setOnClickListener(v -> readLogs(true));
         ScrollView scroll = new ScrollView(this); scroll.addView(layout);
         setContentView(scroll);
         choose.setOnClickListener(v -> new AlertDialog.Builder(this)
@@ -62,9 +66,31 @@ public class LauncherActivity extends Activity {
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 startActivityForResult(intent, PICK);
             }).show());
-        play.setOnClickListener(v -> { if (!busy && ready()) startActivity(new Intent(this, KingpinActivity.class)); });
+        play.setOnClickListener(v -> { if (!busy && ready()) { Diagnostics.record("Play requested"); startActivity(new Intent(this, KingpinActivity.class)); } });
         update();
         if (!ready() && hasBundle()) installBundle();
+    }
+
+    private void readLogs(boolean copyOnly) {
+        new Thread(() -> {
+            String report = Diagnostics.report(this);
+            runOnUiThread(() -> {
+                if (isDestroyed()) return;
+                if (copyOnly) { copyLogText(report); return; }
+                TextView content = new TextView(this);
+                content.setText(report); content.setTextSize(12); content.setTextIsSelectable(true);
+                content.setPadding(16, 16, 16, 16);
+                ScrollView scroll = new ScrollView(this); scroll.addView(content);
+                new AlertDialog.Builder(this).setTitle("Логи Kingpin")
+                    .setView(scroll).setPositiveButton("Скопировать", (d, w) -> copyLogText(report))
+                    .setNegativeButton("Закрыть", null).show();
+            });
+        }, "read-diagnostics").start();
+    }
+    private void copyLogText(String report) {
+        android.content.ClipboardManager clipboard = (android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+        clipboard.setPrimaryClip(android.content.ClipData.newPlainText("Kingpin logs", report));
+        android.widget.Toast.makeText(this, "Логи скопированы. Проверьте их перед отправкой: возможны пути и данные устройства.", android.widget.Toast.LENGTH_LONG).show();
     }
 
     private static File resolveIgnoringCase(File dir, String path) {
@@ -121,7 +147,7 @@ public class LauncherActivity extends Activity {
                 }
                 if (!valid(stage)) throw new IOException("Неполные данные: нужны непустые EXE, DLL, track1.iso, main/gamex86.dll и main/pak0.pak.");
                 publish(stage);
-            } catch (Exception e) { error = "Импорт не выполнен: " + e.getMessage(); }
+            } catch (Exception e) { error = "Импорт не выполнен: " + e.getMessage(); Diagnostics.record(error); }
             finally { try { remove(stage); } catch (IOException ignored) {} }
             final String message = error;
             runOnUiThread(() -> {
