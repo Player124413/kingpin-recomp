@@ -20,9 +20,13 @@ cmake -S . -B $build -G Ninja -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.to
 cmake --build "$build" --target kingpin
 rm -rf $build/apk && mkdir -p $build/apk/lib/arm64-v8a
 $NDK/toolchains/llvm/prebuilt/$NDK_HOST/bin/llvm-strip --strip-debug -o $build/apk/lib/arm64-v8a/libkingpin.so $build/libkingpin.so
+rm -rf "$build/assets"
 mkdir -p "$build/assets"
 cp extras/port.cfg extras/gamepad.cfg "$build/assets/"
-$BT/aapt2 link -A "$build/assets" -o $build/unaligned.apk --manifest android/AndroidManifest.xml -I $PLATFORM/android.jar
+if [ "${KP_BUNDLE_DATA:-0}" = "1" ]; then
+  python3 tools/bundle_android_data.py
+fi
+$BT/aapt2 link -0 zip -A "$build/assets" -o $build/unaligned.apk --manifest android/AndroidManifest.xml -I $PLATFORM/android.jar
 # The activity class (immersive full screen) -> classes.dex
 rm -rf $build/java && mkdir -p $build/java
 javac -nowarn --release 11 -classpath $PLATFORM/android.jar -d $build/java $(find android/java -name '*.java')

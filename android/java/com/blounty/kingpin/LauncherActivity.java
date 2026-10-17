@@ -14,6 +14,8 @@ import android.widget.ScrollView;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 /** SAF folder import; no broad storage permission and no native code until Play. */
 public class LauncherActivity extends Activity {
@@ -44,6 +46,9 @@ public class LauncherActivity extends Activity {
         help.setText("Выберите папку с извлечённой игрой: kingpin.exe, ref_gl.dll, track1.iso и main/ (с pak0.pak и gamex86.dll).\n"
             + "Не ZIP и не папку только с BIN/CUE. kpintro.exe и cd/ с музыкой копируются, если есть.\n"
             + "Нужна свободная память для полной копии игры. Повторный импорт заменяет импортированную игру, включая её сохранения.");
+        if (hasBundle()) help.setText("Игровые данные встроены в APK. При первом запуске они распакуются автоматически.\n"
+            + "Дождитесь окончания распаковки и нажмите «Играть». Нужна свободная память для копии игровых данных.\n"
+            + "Выбор папки нужен только для ручной замены игры; повторный импорт заменит её сохранения.");
         layout.addView(help);
         choose = new Button(this); choose.setText("Выбрать папку игры"); layout.addView(choose);
         play = new Button(this); play.setText("Играть"); layout.addView(play);
@@ -59,6 +64,7 @@ public class LauncherActivity extends Activity {
             }).show());
         play.setOnClickListener(v -> { if (!busy && ready()) startActivity(new Intent(this, KingpinActivity.class)); });
         update();
+        if (!ready() && hasBundle()) installBundle();
     }
 
     private boolean valid(File dir) {
@@ -97,23 +103,7 @@ public class LauncherActivity extends Activity {
                     if (entry != null) copy(tree, entry, new File(stage, name), 0);
                 }
                 if (!valid(stage)) throw new IOException("Неполные данные: нужны непустые EXE, DLL, track1.iso, main/gamex86.dll и main/pak0.pak.");
-                for (String name : new String[]{"port.cfg", "gamepad.cfg"}) {
-                    try (InputStream in = getAssets().open(name); OutputStream out = new FileOutputStream(new File(stage, "main/" + name))) {
-                        transfer(in, out);
-                    }
-                }
-                try (Writer out = new OutputStreamWriter(new FileOutputStream(new File(stage, "main/autoexec.cfg"), true), "UTF-8")) {
-                    out.write("\nexec port.cfg\nexec gamepad.cfg\n");
-                }
-                File installed = new File(root, "imported-game"), backup = new File(root, ".import-backup");
-                remove(backup);
-                if (installed.exists() && !installed.renameTo(backup)) throw new IOException("Не удалось сохранить предыдущую игру.");
-                if (!stage.renameTo(installed)) {
-                    backup.renameTo(installed);
-                    throw new IOException("Не удалось завершить импорт.");
-                }
-                // A failed cleanup must not report a successfully committed import as failed.
-                try { remove(backup); } catch (IOException ignored) {}
+                publish(stage);
             } catch (Exception e) { error = "Импорт не выполнен: " + e.getMessage(); }
             finally { try { remove(stage); } catch (IOException ignored) {} }
             final String message = error;
@@ -123,6 +113,71 @@ public class LauncherActivity extends Activity {
                 if (message != null) status.setText(message);
             });
         }, "game-import").start();
+    }
+    private void publish(File stage) throws IOException {
+        for (String name : new String[]{"port.cfg", "gamepad.cfg"}) {
+            try (InputStream in = getAssets().open(name); OutputStream out = new FileOutputStream(new File(stage, "main/" + name))) {
+                transfer(in, out);
+            }
+        }
+        try (Writer out = new OutputStreamWriter(new FileOutputStream(new File(stage, "main/autoexec.cfg"), true), "UTF-8")) {
+            out.write("\nexec port.cfg\nexec gamepad.cfg\n");
+        }
+        File installed = new File(root, "imported-game"), backup = new File(root, ".import-backup");
+        remove(backup);
+        if (installed.exists() && !installed.renameTo(backup)) throw new IOException("Не удалось сохранить предыдущую игру.");
+        if (!stage.renameTo(installed)) {
+            backup.renameTo(installed);
+            throw new IOException("Не удалось завершить импорт.");
+        }
+        // A failed cleanup must not report a successfully committed import as failed.
+        try { remove(backup); } catch (IOException ignored) {}
+    }
+    private boolean hasBundle() {
+        try (InputStream in = getAssets().open("game-data.zip")) { return true; }
+        catch (IOException e) { return false; }
+    }
+    private void installBundle() {
+        busy = true; update();
+        status.setText("Первый запуск: распаковка встроенной игры… Не закрывайте приложение.");
+        new Thread(() -> {
+            String error = null;
+            File stage = new File(root, ".import-stage");
+            try {
+                remove(stage); mkdir(stage);
+                String prefix = stage.getCanonicalPath() + File.separator;
+                long total = 0;
+                try (ZipInputStream zip = new ZipInputStream(new BufferedInputStream(getAssets().open("game-data.zip")))) {
+                    ZipEntry entry;
+                    byte[] buffer = new byte[256 * 1024];
+                    while ((entry = zip.getNextEntry()) != null) {
+                        File target = new File(stage, entry.getName());
+                        if (!target.getCanonicalPath().startsWith(prefix)) throw new IOException("Недопустимый путь в архиве.");
+                        if (entry.isDirectory()) { mkdir(target); continue; }
+                        mkdir(target.getParentFile());
+                        try (OutputStream out = new FileOutputStream(target)) {
+                            int n;
+                            while ((n = zip.read(buffer)) != -1) {
+                                total += n;
+                                if (total > 4L * 1024 * 1024 * 1024) throw new IOException("Архив слишком большой.");
+                                out.write(buffer, 0, n);
+                            }
+                        }
+                        final long mb = total / (1024 * 1024);
+                        runOnUiThread(() -> { if (!isDestroyed()) status.setText("Распаковка игры: " + mb + " МБ"); });
+                    }
+                }
+                if (!valid(stage)) throw new IOException("Во встроенном архиве не хватает игровых файлов.");
+                publish(stage);
+            } catch (Exception e) { error = "Распаковка не выполнена: " + e.getMessage() + " Закройте и откройте приложение, чтобы повторить."; }
+            finally { try { remove(stage); } catch (IOException ignored) {} }
+            final String message = error;
+            runOnUiThread(() -> {
+                if (isDestroyed()) return;
+                busy = false; update();
+                if (message != null) status.setText(message);
+            });
+        }, "bundled-game-install").start();
     }
     private static class Entry {
         String name; Uri uri; boolean directory;

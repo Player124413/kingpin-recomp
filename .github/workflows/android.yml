@@ -8,6 +8,11 @@ on:
         required: false
         type: string
         default: ''
+      bundle_game_data:
+        description: 'Include your game data in APK (personal use only; large download)'
+        required: true
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -53,10 +58,12 @@ jobs:
           python tools/x86recomp.py gen game/kingpin.exe game/ref_gl.dll game/main/gamex86.dll --seeds tools/seeds.txt --overrides tools/overrides.txt
           python tools/x86recomp.py gen_intro game/kpintro.exe --smc tools/kpintro_smc.txt
       - name: Build and verify APK
+        env:
+          KP_BUNDLE_DATA: ${{ inputs.bundle_game_data && '1' || '0' }}
         run: |
           android/build.sh
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify build-android/Kingpin.apk
-      # No discs, extracted assets or generated sources are uploaded.
+      # Only the APK is uploaded; it includes game assets when bundle_game_data is enabled.
       - uses: actions/upload-artifact@v4
         with:
           name: Kingpin-Android-arm64
