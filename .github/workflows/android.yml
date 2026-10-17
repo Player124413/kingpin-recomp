@@ -9,6 +9,11 @@ on:
         type: string
         default: ''
 
+# Serialize builds so concurrent first runs cannot generate different signing keys.
+concurrency:
+  group: kingpin-android-signing
+  cancel-in-progress: false
+
 permissions:
   contents: read
 
@@ -33,18 +38,47 @@ jobs:
         with:
           # The action defaults to "tools platform-tools", but "tools" was removed.
           packages: platform-tools
-      - name: Restore persistent APK signing key
+      - name: Select APK signing key source
+        id: signing
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
         run: |
-          if [ -z "$ANDROID_KEYSTORE_BASE64" ]; then
-            echo 'Missing ANDROID_KEYSTORE_BASE64. Run Create Android signing key once, then save its file contents as that repository secret. See README.'
-            exit 1
-          fi
           mkdir -p "$HOME/.android"
-          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$HOME/.android/debug.keystore"
+          rm -f "$HOME/.android/debug.keystore"
+          if [ -n "$ANDROID_KEYSTORE_BASE64" ]; then
+            printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$HOME/.android/debug.keystore"
+            echo 'source=secret' >> "$GITHUB_OUTPUT"
+          else
+            echo 'source=cache' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Restore automatic personal signing key
+        if: steps.signing.outputs.source == 'cache'
+        id: signing-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: kingpin-personal-signing-v1
+      - name: Create or verify personal signing key
+        run: |
+          if [ ! -s "$HOME/.android/debug.keystore" ]; then
+            umask 077
+            keytool -genkeypair -keystore "$HOME/.android/debug.keystore" \
+              -storetype JKS -storepass android -keypass android -alias androiddebugkey \
+              -keyalg RSA -keysize 2048 -validity 10000 -dname 'CN=Kingpin Personal Build'
+            echo 'Created a new personal signing key. APKs signed with a different key cannot be updated in place.' >> "$GITHUB_STEP_SUMMARY"
+          fi
           chmod 600 "$HOME/.android/debug.keystore"
           keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey > /dev/null
+      - name: Save automatic personal signing key
+        if: steps.signing.outputs.source == 'cache' && steps.signing-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: kingpin-personal-signing-v1
+      - name: Explain automatic signing limitations
+        if: steps.signing.outputs.source == 'cache'
+        run: |
+          echo 'Automatic signing uses the Actions cache. Cache eviction/deletion or running on another branch without access to this cache can change the signing key. For long-term stable signing, optionally use ANDROID_KEYSTORE_BASE64. Cached keys are not suitable for production signing or untrusted repository access.' >> "$GITHUB_STEP_SUMMARY"
       - name: Install build tools
         run: |
           sudo apt-get update

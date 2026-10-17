@@ -153,8 +153,8 @@ inside the app. Both artifacts expire after 3 days.
 
 These artifacts contain copyrighted game material/code: keep them for personal
 use, do not publish them as releases. No generated source code is uploaded.
-CI requires a persistent signing key in `ANDROID_KEYSTORE_BASE64` so subsequent
-builds can be installed over existing ones without deleting app data. See below.
+CI automatically reuses a personal signing key from the Actions cache. No manual
+key setup is required. See the signing limitations below.
 
 ### Android launcher and folder import
 
@@ -257,37 +257,27 @@ the import. This preference does not translate the game or change the Android
 system folder picker's language.
 
 
-### Android updates without uninstalling
+### One-click Android builds and signing
 
-APK updates must use the same package ID, signing key and a version code no lower
-than the installed app. The build workflow now requires a persistent signing key
-instead of generating a different one on every run.
+Run **Build Android APK**, paste the disc ZIP link and start the build. There is
+no separate signing workflow, key download or mandatory secret setup. On first
+use, CI generates a personal signing key and immediately saves it in the Actions
+cache; later builds reuse it. The key is not included in downloadable artifacts.
+Builds are serialized to avoid simultaneous first-run key generation.
 
-One-time setup (possible entirely in the GitHub browser UI):
+**Limitations:** this is best-effort personal-build signing, not permanent secure
+key storage. GitHub may evict unused caches; deleting caches or changing branches
+can also lose access to the key (cache scope follows GitHub's branch rules).
+A lost cache produces a new key, and that APK cannot update a version signed with
+the old key. Do not use this mechanism for production releases or repositories
+with untrusted read/Actions access: caches are not secrets. For guaranteed
+long-term key retention, optionally supply `ANDROID_KEYSTORE_BASE64` as an Actions
+secret containing your existing base64 JKS keystore (alias `androiddebugkey`,
+store/key password `android`); this takes priority over the cache.
 
-1. Run **Actions → Create Android signing key → Run workflow** once.
-2. Download **PRIVATE-Android-Signing-Key**, unzip it, and open
-   `ANDROID_KEYSTORE_BASE64.txt` locally. **This is a private signing key**, not
-   game data: never publish it or paste it into chat. Anyone who can download
-   repository Actions artifacts may be able to access it; prefer a private repo.
-3. Add the entire file contents as the repository Actions secret
-   **ANDROID_KEYSTORE_BASE64**. The connected agent cannot set repository secrets
-   with its current GitHub permissions, so this step must be done by the owner.
-4. Back up this key securely, then delete the signing-key workflow run/artifact
-   after saving it. The artifact also expires after one day. Do not regenerate
-   the key for later builds: use the same secret every time.
-5. Run **Build Android APK**. Install future APKs as updates (or use
-   `adb install -r Kingpin.apk`). Do not uninstall or clear app storage.
-
-The helper creates an RSA/JKS keystore with alias `androiddebugkey`, store/key
-password `android`, matching the personal-build script. The passwords are not a
-substitute for protecting the private keystore. A pre-existing matching keystore
-can instead be base64-encoded and saved as the same secret; do not use the helper
-if you already have the signing key you need to preserve.
-
-**Previously built APKs used ephemeral runner keys.** If the signing key of an
-already installed APK was not saved, Android cannot accept a newly signed update
-over it; there is no safe bypass. Back up saves/data before the one-time uninstall
-and reinstall. After that, keep the persistent key unchanged. The keystore is
-never included in the normal APK/game-data artifacts. Increase `versionCode` in
-`android/AndroidManifest.xml` for releases; never decrease it for an update.
+Install subsequent APKs with the same key/package as updates, or use
+`adb install -r Kingpin.apk`. Do not uninstall or clear app storage. APK updates
+also need a version code no lower than the installed version. Back up saves
+before changing signing keys. Older APKs built with lost ephemeral runner keys
+cannot be updated in place with a newly generated key: Android requires a
+one-time uninstall/reinstall in that case. There is no safe bypass.
