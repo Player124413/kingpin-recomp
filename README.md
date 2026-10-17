@@ -123,12 +123,15 @@ single enclosing folder is fine. Installed-game ZIPs without BIN/CUE are not sup
 
 1. Upload the ZIP to Google Drive (allow downloads for anyone with the link), or
    preferably a **private Hugging Face dataset**. Do not publish copyrighted game files.
-2. In your GitHub repository, open **Settings → Secrets and variables → Actions**
-   and add `GAME_ARCHIVE_URL` as a repository secret:
+2. Paste the ZIP URL into **game_archive_url** in the **Run workflow** form.
+   Alternatively, open **Settings → Secrets and variables → Actions** and add
+   `GAME_ARCHIVE_URL` as a repository secret; leave the form field blank to use it.
+   Form inputs are not secrets and may be visible in workflow run metadata, so
+   use the secret for sensitive links. Supported URL formats:
    - Google Drive: `https://drive.google.com/file/d/FILE_ID/view`
    - Hugging Face: `https://huggingface.co/datasets/USER/DATASET/resolve/main/disc.zip`
      (use `resolve`, not `blob`). For a private dataset, also add the `HF_TOKEN`
-     secret with read access to that dataset.
+     secret with read access to that dataset (never paste tokens into the URL field).
 3. Open **Actions → Build Android APK → Run workflow** and select the branch
    containing the workflow. GitHub may require the workflow to be present on the
    default branch before showing the manual-run button.
