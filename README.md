@@ -244,3 +244,14 @@ is best-effort, not a substitute for `adb logcat` when a complete stack is neede
 
 Review copied text before sharing: it may contain device details and file paths.
 Logs survive app/process restarts, but not uninstalling or clearing app storage.
+
+### Launcher language
+
+Use the **Язык: Русский / Language: English** button near the top of the launcher
+to select Russian or English. The choice is saved across app restarts and applied
+immediately. The initial default follows the device language (Russian for `ru`,
+English otherwise). Buttons, help, import progress/errors and log dialogs are
+translated; technical diagnostic records remain in their original language.
+The selector is disabled while copying/extracting game data to avoid interrupting
+the import. This preference does not translate the game or change the Android
+system folder picker's language.

@@ -14,6 +14,7 @@ public class Diagnostics extends Application {
     private static File folder;
     @Override public void onCreate() {
         super.onCreate();
+        UiText.init(this);
         folder = new File(getFilesDir(), "logs");
         folder.mkdirs();
         final Thread.UncaughtExceptionHandler original = Thread.getDefaultUncaughtExceptionHandler();
@@ -43,7 +44,7 @@ public class Diagnostics extends Application {
         } catch (IOException ignored) { /* Diagnostics must never crash the game. */ }
     }
     private static String tail(File path) throws IOException {
-        if (!path.isFile()) return "(нет записей)\n";
+        if (!path.isFile()) return UiText.text("(нет записей)\n", "(no entries)\n");
         try (RandomAccessFile file = new RandomAccessFile(path, "r")) {
             long start = Math.max(0, file.length() - 48 * 1024);
             file.seek(start);

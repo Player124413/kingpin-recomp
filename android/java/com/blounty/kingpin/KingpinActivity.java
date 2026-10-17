@@ -30,7 +30,7 @@ public class KingpinActivity extends NativeActivity {
             } catch (UnsatisfiedLinkError error) {
                 Diagnostics.record("FPS JNI method unavailable: " + error);
                 android.util.Log.e("Kingpin", "FPS JNI method unavailable", error);
-                fpsLabel.setText("FPS недоступен");
+                fpsLabel.setText(UiText.text("FPS недоступен", "FPS unavailable"));
                 return; // an optional counter must never terminate the game
             }
             fpsHandler.postDelayed(this, 500);
